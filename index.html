@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 CSEE Reproducible workflows workshop</title>
+<title>Reproducible workflows workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,9 +130,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">2023 CSEE Reproducible workflows workshop</a> 
+      <a href="./">Reproducible workflows workshop</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/robitalec/reproducible-workflows-workshop" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -382,6 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#reproducible-workflows-workshop" id="toc-reproducible-workflows-workshop" class="nav-link active" data-scroll-target="#reproducible-workflows-workshop">Reproducible workflows workshop</a>
   <ul class="collapse">
+  <li><a href="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" id="toc-developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="nav-link" data-scroll-target="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</a></li>
   <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
@@ -405,12 +406,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="reproducible-workflows-workshop" class="level1">
 <h1>Reproducible workflows workshop</h1>
-<p>Workshop at <a href="https://www.beepeg2023.ca/">CSEE 2023</a>: developing a reproducible workflow in R using functions, {targets} and {renv}</p>
-<p>Developed and delivered by:</p>
+<section id="developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="level2">
+<h2 class="anchored" data-anchor-id="developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</h2>
+<p>Originally developed for a <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop">workshop</a> at <a href="https://www.beepeg2023.ca/">CSEE 2023</a> by:</p>
 <ul>
 <li>Alec L. Robitaille (Memorial University of Newfoundland and Labrador)</li>
 <li>Isabella C. Richmond (Concordia University)</li>
 </ul>
+</section>
 <section id="schedule" class="level2">
 <h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
 <p>Projects</p>
@@ -508,9 +511,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (Set your own destination directory)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">use_course</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop/archive/refs/heads/participant.zip'</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/participant.zip'</span>, </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">destdir =</span> <span class="st">'~/Documents'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or by downloading and unziping the ZIP file at this link: <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop/archive/refs/heads/participant.zip" class="uri">https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop/archive/refs/heads/participant.zip</a>.</p>
+<p>Or by downloading and unziping the ZIP file at this link: <a href="https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/participant.zip" class="uri">https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/participant.zip</a>.</p>
 <p>Then open up the RStudio project.</p>
 </section>
 <section id="data" class="level2">
@@ -605,7 +608,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">LICENSE</h2>
-<p>This project is released under the GNU General Public License v3.0. Read it <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop/blob/quarto/devel/LICENSE">here</a>.</p>
+<p>This project is released under the GNU General Public License v3.0. Read it <a href="https://github.com/robitalec/reproducible-workflows-workshop/blob/quarto/devel/LICENSE">here</a>.</p>
 
 
 </section>
