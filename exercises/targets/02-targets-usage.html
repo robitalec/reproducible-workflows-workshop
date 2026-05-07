@@ -551,7 +551,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#application-of-targets" id="toc-application-of-targets" class="nav-link active" data-scroll-target="#application-of-targets">Application of targets</a>
   <ul>
-  <li><a href="#tar_visnetwork" id="toc-tar_visnetwork" class="nav-link" data-scroll-target="#tar_visnetwork"><code>tar_visnetwork()</code></a>
+  <li><a href="#tar_visnetwork" id="toc-tar_visnetwork" class="nav-link" data-scroll-target="#tar_visnetwork">tar_visnetwork()</a>
   <ul class="collapse">
   <li><a href="#exercise-tar_visnetwork" id="toc-exercise-tar_visnetwork" class="nav-link" data-scroll-target="#exercise-tar_visnetwork">Exercise: tar_visnetwork()</a></li>
   </ul></li>
@@ -610,7 +610,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="tar_visnetwork" class="level2">
-<h2 class="anchored" data-anchor-id="tar_visnetwork"><code>tar_visnetwork()</code></h2>
+<h2 class="anchored" data-anchor-id="tar_visnetwork">tar_visnetwork()</h2>
 <p>Before we run our pipeline, we can check that everything looks good in the dependency graph with <code>tar_visnetwork()</code>. By default, <code>tar_visnetwork()</code> shows objects, functions and targets. You can adjust this behaviour to only show the targets using the argument <code>targets_only</code> set to TRUE.</p>
 <p>Another argument that is especially useful when you have many targets: <code>name</code>. To show only selected targets, you can use {tidyselect} <a href="https://tidyselect.r-lib.org/reference/index.html#selecting-variables">helpers</a> like <code>starts_with()</code>. The <code>name</code> argument comes up in many other {targets} functions including <code>tar_meta()</code> and <code>tar_read()</code>.</p>
 <p>Related functions to <code>tar_visnetwork()</code> include:</p>
@@ -782,6 +782,7 @@ Hint
 <h2 class="anchored" data-anchor-id="forcing-reruns">Forcing reruns</h2>
 <p>The following functions can be used to force {targets} to rerun targets.</p>
 <ul>
+<li><code>tar_invalidate()</code> deletes the metadata record associated with a target, meaning it will rerun regardless of whether it is out of date. However, the already-run file still exists (and can be found using <code>tar_path_target()</code>)</li>
 <li><code>tar_delete()</code> deletes individual target output values</li>
 <li><code>tar_destroy()</code> deletes the whole <code>_targets/</code> data store (<strong>caution</strong>)</li>
 </ul>
@@ -790,9 +791,9 @@ Hint
 <h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
 <p>Make more targets!</p>
 <ul>
-<li><p>use the <code>plot_xy()</code> function with the weather timeseries</p></li>
-<li><p>use the <code>plot_xy()</code> function with the palmerpenguins timeseries</p></li>
-<li><p>make a target for something that isn’t one of our custom functions eg. <code>summary()</code>. ({targets} don’t need to be custom functions, any R command can be used)</p></li>
+<li>use the <code>prepare_csv()</code> function with the weather timeseries</li>
+<li>make a target for something that isn’t one of our custom functions eg. <code>summary()</code>. ({targets} don’t need to be custom functions, any R command can be used)</li>
+<li>use <code>tar_invalidate()</code> to rerun a part of the example {targets} workflow</li>
 </ul>
 
 
