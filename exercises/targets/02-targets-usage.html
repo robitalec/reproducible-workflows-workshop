@@ -647,7 +647,7 @@ Hint
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>(<span class="at">targets_only =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>(<span class="fu">starts_with</span>(<span class="st">'plot'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>(<span class="fu">ends_with</span>(<span class="st">'counts'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 </section>
@@ -747,7 +747,7 @@ Hint
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_meta</span>()</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_meta</span>(<span class="fu">starts_with</span>(<span class="st">'plot'</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_meta</span>(<span class="fu">ends_with</span>(<span class="st">'counts'</span>))</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(<span class="fu">tar_meta</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -771,7 +771,7 @@ Hint
 <p>Update and rerun your {targets} workflow.</p>
 </div>
 </div>
-<p>Instruction: make sure your {targets} pipeline is up to date with <code>tar_visnetwork()</code>. Then, make an edit to the function <code>sum_counts()</code>. Rerun the {targets} pipeline. Next, make an edit to the function <code>plot_xy()</code>. Rerun with <code>tar_make()</code>. Lastly, make an edit to <code>prepare_csv()</code> and rerun. Note which targets were rerun with each change and discuss with your neighbours.</p>
+<p>Instruction: make sure your {targets} pipeline is up to date with <code>tar_visnetwork()</code>. Then, make an edit to the function <code>sum_counts()</code>. Rerun the {targets} pipeline. Next, make an edit to the function <code>filter_islands()</code>. Rerun with <code>tar_make()</code>. Lastly, make an edit to <code>prepare_csv()</code> and rerun. Note which targets were rerun with each change and discuss with your neighbours.</p>
 <p>Bonus:</p>
 <ul>
 <li>make a change to <code>prepare_csv()</code> that doesn’t actually change the returned object (eg. by adding an irrelevant intermediate step). Does this force the {targets} pipeline to rerun?</li>
