@@ -564,6 +564,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/01-functions-introduction.html">Functions</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/03-functions-checks.html">Checks</a></li></ol></nav></header><section id="checks" class="level1"><h1>Checks</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Goal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add tests and checks to ensure functions work and error when expected.</p>
+</div>
+</div>
 <p>Checks in functions are used to ensure inputs and arguments are as expected, to handle errors and to provide informative error messages to users. In this workshop we are going to focus on writing checks with the function <code>stopifnot</code> because it is simple and succinct. It was recently improved in R 4.0.0 when the R development team added the option to provide a more informative error which will help us clearly communicate with our users (and ourselves).</p>
 <p><code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> expects a logical statement that you are expecting to be true, and, if not, <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> will throw an error.</p>
 <p>To build logical statements, you may find following list of functions useful:</p>
@@ -615,6 +628,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="logical-statements" class="level2"><h2 class="anchored" data-anchor-id="logical-statements">Logical statements</h2>
 </section><section id="exercise-function-checks" class="level2"><h2 class="anchored" data-anchor-id="exercise-function-checks">Exercise: function checks</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Practice writing logical statements.</li>
+</ul>
+</div>
+</div>
 <p>Instruction: write a series of logical statements for the following objects then consult the solution to check your work. Focus only on the logical statement for now, we’ll use <code>stopifnot</code> in the following exercises.</p>
 <p>Number</p>
 <ul>
@@ -741,6 +769,19 @@ Hints: <code>ggplot2</code>
 <hr></details></section></section><section id="writing-checks" class="level2"><h2 class="anchored" data-anchor-id="writing-checks">Writing Checks</h2>
 <section id="exercise-writing-checks-for-plot_xy" class="level3"><h3 class="anchored" data-anchor-id="exercise-writing-checks-for-plot_xy">Exercise: writing checks for <code>plot_xy()</code>
 </h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write and test a complete function.</p>
+</div>
+</div>
 <p>Instruction: add the following checks to your <code>plot_xy()</code> function and test them in your test script (<code>tests/test_plot_xy.R</code>).</p>
 <ul>
 <li>check if the columns provided to the <code>x_col</code> and <code>y_col</code> arguments exist in the data.frame (quoted column name arguments)</li>

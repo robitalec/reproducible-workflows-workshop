@@ -551,9 +551,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#reproducible-workflows-workshop" id="toc-reproducible-workflows-workshop" class="nav-link active" data-scroll-target="#reproducible-workflows-workshop">Reproducible workflows workshop</a>
   <ul>
-  <li><a href="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" id="toc-developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="nav-link" data-scroll-target="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</a></li>
+  <li><a href="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" id="toc-developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="nav-link" data-scroll-target="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</a>
+  <ul class="collapse">
+  <li><a href="#alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador" id="toc-alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador" class="nav-link" data-scroll-target="#alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador">Alec L. Robitaille (Memorial Unviersity of Newfoundland and Labrador)</a></li>
+  <li><a href="#isabella-c.-richmond-concordia-university" id="toc-isabella-c.-richmond-concordia-university" class="nav-link" data-scroll-target="#isabella-c.-richmond-concordia-university">Isabella C. Richmond (Concordia University)</a></li>
+  </ul></li>
   <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
@@ -577,14 +580,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Reproducible workflows workshop</h1>
 <section id="developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="level2">
 <h2 class="anchored" data-anchor-id="developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</h2>
-<p>Originally developed for a <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop">workshop</a> at CSEE 2023 by:</p>
-<ul>
-<li>Alec L. Robitaille (Memorial University of Newfoundland and Labrador)</li>
-<li>Isabella C. Richmond (Concordia University)</li>
-</ul>
+<section id="alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador" class="level4">
+<h4 class="anchored" data-anchor-id="alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador">Alec L. Robitaille (Memorial Unviersity of Newfoundland and Labrador)</h4>
+</section>
+<section id="isabella-c.-richmond-concordia-university" class="level4">
+<h4 class="anchored" data-anchor-id="isabella-c.-richmond-concordia-university">Isabella C. Richmond (Concordia University)</h4>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Goal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We designed this workshop so that by the ends participants will be able to approach analyses in a more holistic way (whole project vs script by script), share data across projects and software versions with minimal stress, and use workflows that reduce analysis errors and mental load</p>
+</div>
+</div>
+</section>
 </section>
 <section id="schedule" class="level2">
 <h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
+<p>Originally developed for a <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop">workshop</a> at CSEE 2023</p>
 <p>Projects</p>
 <ul>
 <li>Directories</li>
@@ -613,39 +631,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Saving package versions</li>
 <li>Checking conflicts</li>
-</ul>
-</section>
-<section id="learning-goals" class="level2">
-<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
-<p>Overall</p>
-<ul>
-<li>Approach analyses in a more holistic way (whole project vs script by script)</li>
-<li>Share data across projects and software versions with minimal stress&nbsp;</li>
-<li>Use workflows that reduce analysis errors and mental load</li>
-</ul>
-<p>Section 1: Projects</p>
-<ul>
-<li>Construct a RStudio project that is thoroughly documented using file structure and data management best practices</li>
-<li>Use RStudio projects to effectively share their own work, and use other people’s</li>
-</ul>
-<p>Section 2: Functions</p>
-<ul>
-<li>Read and understand structure of functions in R</li>
-<li>Refactor code into functions that do one thing</li>
-<li>Add tests and checks to ensure functions work and error when expected</li>
-<li>Recognize the value of functions as chunks of code that are reusable and easier to debug</li>
-</ul>
-<p>Section 3: {targets}</p>
-<ul>
-<li>(For a given project) map out relationships between inputs, outputs and analysis steps</li>
-<li>Identify discrete chunks/steps and write corresponding (or use available) functions&nbsp;</li>
-<li>Execute a workflow in {targets} that reads in data, performs a function, and saves an output</li>
-<li>Recognize the value of workflows for reducing mental load and improving efficiency</li>
-</ul>
-<p>Section 4: {renv} + {conflicted}</p>
-<ul>
-<li>Use {renv} to preserve current package versions to ensure the environment is reproducible, portable and isolated</li>
-<li>Use {conflicted} to detect conflicting function names</li>
 </ul>
 </section>
 <section id="setup" class="level2">

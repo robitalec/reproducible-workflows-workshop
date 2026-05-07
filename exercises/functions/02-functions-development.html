@@ -550,6 +550,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/01-functions-introduction.html">Functions</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/02-functions-development.html">Developing functions</a></li></ol></nav></header><section id="developing-functions" class="level1"><h1>Developing functions</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Goal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Refactor code into functions that do one thing.</p>
+</div>
+</div>
 <section id="setup" class="level2"><h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>The setup:</p>
 <ol type="1">
@@ -581,6 +594,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Check the test output, tweak the function, repeat!</p>
 <p>This process of editing two files might seem like extra work, but we recommend separating the function’s definition from the bits of code we use to test it. Think of the test script as your isolated playground to test and develop the function and your function script as the sheltered environment where you carefully tweak the function. You can also use this test script as a place to develop the function using the same inputs and arguments as the function. Keeping these parts separate can help to avoid mysterious errors and general chaos!</p>
 <section id="exercise-function-development" class="level3"><h3 class="anchored" data-anchor-id="exercise-function-development">Exercise: function development</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a new function called <code>prepare_csv()</code> that reads in raw data and cleans it.</p>
+</div>
+</div>
 </section><section id="prepare_csv" class="level3"><h3 class="anchored" data-anchor-id="prepare_csv"><code>prepare_csv()</code></h3>
 <p>Instruction: setup your function script and test script for your new function <code>prepare_csv()</code>.</p>
 <p>Use whichever function you prefer for reading CSVs (eg. <code><a href="https://rdrr.io/pkg/data.table/man/fread.html">data.table::fread()</a></code>, or <code>readr::read_csv()</code>). For cleaning column names, we’ll use the function <code>clean_names()</code> from the {janitor} package.</p>

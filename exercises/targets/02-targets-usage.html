@@ -586,6 +586,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="application" class="level1">
 <h1>Application</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Goals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Execute a workflow in {targets} that reads in data, performs a function, and saves an output.</li>
+<li>Recognize the value of workflows for reducing mental load and improving efficiency.</li>
+</ul>
+</div>
+</div>
 <p>Now that we have our <code>_targets.R</code> script setup with the previous exercises and we have added our first few targets to the pipeline, let’s take a look at using {targets}. It is a bit different than the <a href="https://books.ropensci.org/targets/#motivation">usual R approach</a> where we make edits, then rerun everything, wait for results, notice issues, rerun from scratch…</p>
 <p>The following functions allow us to interact with the pipeline’s definition, metadata and results. Because of this, we shouldn’t put them inside the <code>_targets.R</code> script or in our <code>R/</code> directory. Often a {targets} pipeline will result in a rendered document or manuscript, a number of saved plots or an output data file.</p>
 <p>In our case, let’s make a new script called <code>explore.R</code> in the root of the project’s directory. Then we can keep track of our commands like <code>tar_meta()</code>, <code>tar_visnetwork()</code> and <code>tar_read()</code>, and easily rerun them when we make changes to the pipeline.</p>
@@ -605,6 +621,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="exercise-tar_visnetwork" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-tar_visnetwork">Exercise: <code>tar_visnetwork()</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Visualize your {targets} workflow.</p>
+</div>
+</div>
 <p>Instruction: run <code>tar_visnetwork()</code> from your <code>explore.R</code> script to see the dependency graph defined in your <code>_targets.R</code> script. Try out the <code>targets_only</code> and <code>name</code> arguments too.</p>
 <details>
 <summary>
@@ -627,6 +656,19 @@ Hint
 <p>Run the {targets} pipeline with <code>tar_make()</code>. The pipeline is run in a new external R process, which means that <code>tar_make()</code> doesn’t impact your current workspace and, more importantly, is not influenced by your current workspace. This totally isolated environment is how {targets} offers us a truly reproducible approach - only things defined in the <code>_targets.R</code> script (or sourced within it) are considered.</p>
 <section id="exercise-tar_make" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-tar_make">Exercise: <code>tar_make()</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Run your {targets} workflow.</p>
+</div>
+</div>
 <p>Instruction: run <code>tar_make()</code> from your <code>explore.R</code> script.</p>
 <details>
 <summary>
@@ -645,6 +687,19 @@ Hint
 <p>To look at results from the {targets} pipeline, use <code>tar_read()</code> and <code>tar_load()</code>. <code>tar_read()</code> reads targets without saving them as an object in your environment and <code>tar_load()</code> loads the object directly to your environment using the name of the target as the object.</p>
 <section id="exercise-tar_read-tar_load" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-tar_read-tar_load">Exercise: <code>tar_read()</code>, <code>tar_load()</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Load completed targets from your workflow.</p>
+</div>
+</div>
 <p>Instruction: run <code>tar_read()</code> and <code>tar_load()</code> from your <code>explore.R</code> script to read/load the targets defined in your {targets} pipeline.</p>
 <details>
 <summary>
@@ -667,6 +722,19 @@ Hint
 <p>The metadata related to the {targets} pipeline is accessible using the function <code>tar_meta()</code>.</p>
 <section id="exercise-tar_meta" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-tar_meta">Exercise: <code>tar_meta()</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explore the metadata from your workflow.</p>
+</div>
+</div>
 <p>Instruction: run <code>tar_meta()</code> from your <code>explore.R</code> script to look at the metadata associated with your {targets} pipeline. Also try using the <code>names</code> argument to filter the metadata returned.</p>
 <p>Note: we sometimes find it helpful to use the <code>View()</code> function to open the metadata as a table in RStudio.</p>
 <details>
@@ -690,6 +758,19 @@ Hint
 <p>Now that we have a {targets} pipeline, the approach is a bit different than we might be used to using R interactively. With a {targets} pipeline, everything is defined in the pipeline so our process is now about making edits to our functions and our <code>_targets.R</code> pipeline, then rerunning <code>tar_make()</code>. {targets} tracks all functions and objects (and optionally can also track external files) and will only rerun downstream targets when required. This is the other main way that {targets} makes our lives easier. We no longer need to mentally keep track of versions of scripts, output files, figures, etc - just run <code>tar_make()</code> to run anything outdated (or check with <code>tar_visnetwork()</code>).</p>
 <section id="exercise-practice-the-targets-approach" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-practice-the-targets-approach">Exercise: practice the {targets} approach</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Update and rerun your {targets} workflow.</p>
+</div>
+</div>
 <p>Instruction: make sure your {targets} pipeline is up to date with <code>tar_visnetwork()</code>. Then, make an edit to the function <code>sum_counts()</code>. Rerun the {targets} pipeline. Next, make an edit to the function <code>plot_xy()</code>. Rerun with <code>tar_make()</code>. Lastly, make an edit to <code>prepare_csv()</code> and rerun. Note which targets were rerun with each change and discuss with your neighbours.</p>
 <p>Bonus:</p>
 <ul>

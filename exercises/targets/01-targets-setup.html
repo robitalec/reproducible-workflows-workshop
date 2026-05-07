@@ -593,6 +593,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="setup" class="level1">
 <h1>Setup</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Goals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>(For a given project) map out relationships between inputs, outputs and analysis steps.</li>
+<li>Identify discrete chunks/steps and write corresponding (or use available) functions.</li>
+</ul>
+</div>
+</div>
 <p>This set of exercises are centered around an approach to setting up your project using {targets}.</p>
 <p>A {targets} pipeline is declared in the <code>_targets.R</code> file in the root of your project’s directory. We’ll also set up a central place to put all our of required packages that helps us keep track of them, and will later make it easier to set up {renv}.</p>
 <section id="targets.r" class="level2">
@@ -618,6 +634,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="exercise-_targets.r" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-_targets.r">Exercise: <code>_targets.R</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create the base of a usable workflow by making a _targets.R script.</p>
+</div>
+</div>
 <p>Instruction: make a new R script in the root directory of your project named <code>_targets.R</code>. At the top, load {targets} and at the bottom put an empty list <code>c( )</code>.</p>
 </section>
 </section>
@@ -631,6 +660,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We prefer the second approach because it keeps our <code>_targets.R</code> tidier, and helps us setup {renv} package versioning and {conflicted} later. You might find your list of packages gets long, and this gets them out of our way. You can also use this script when you are exploring your results later - source the <code>packages.R</code> script and you will have all your required packages.</p>
 <section id="exercise-packages.r" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-packages.r">Exercise: <code>packages.R</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Load packages in a {targets} workflow using a designated packages script in the R/ directory.</p>
+</div>
+</div>
 <p>Instruction: make a new script called <code>packages.R</code> in the <code>R/</code> directory. Go through your function test scripts from previous exercises and add all the packages you used to the <code>packages.R</code> file with a <code>library()</code> call for each package on a separate line.</p>
 <p>For example:</p>
 <p><code>R/packages.R</code></p>
@@ -652,6 +694,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note: something to be careful about now that we are sourcing the <code>R/</code> directory - you shouldn’t have any calls to {targets} functions like <code>tar_read()</code>, <code>tar_load()</code> or <code>tar_make()</code> in the script in the <code>R/</code> directory. This is an impossible circular dependency - you are load or reading a target while you are also in the process of making it. Put any <code>tar_read()</code>, <code>tar_load()</code> or <code>tar_make()</code> calls elsewhere.</p>
 <section id="exercise-sourcing-functions" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-sourcing-functions">Exercise: sourcing functions</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Source all functions in the R/ directory so that the {targets} workflow can run.</p>
+</div>
+</div>
 <p>Instruction: replace the above <code>source('R/packages.R')</code> command with the function <code>tar_source()</code> pointing to the <code>R/</code> directory with your <code>packages.R</code> script and the functions you developed in the previous exercises.</p>
 <p>Note: you will need to load {targets} to run the <code>tar_source()</code> function.</p>
 <p>For example:</p>
@@ -666,6 +721,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The full reference page for <code>tar_option_set()</code> is available here: <a href="https://docs.ropensci.org/targets/reference/tar_option_set.html" class="uri">https://docs.ropensci.org/targets/reference/tar_option_set.html</a></p>
 <section id="exercise-options" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-options">Exercise: options</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a space in the _targets.R script to set workflow options.</p>
+</div>
+</div>
 <p>Instruction: make a new section in your <code>_targets.R</code> script named Options, and put an empty call to <code>tar_option_set()</code> there.</p>
 <p>For example:</p>
 <p><code>_targets.R</code></p>
@@ -693,6 +761,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="exercise-variables" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-variables">Exercise: variables</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use variables in your _targets.R script to define file paths.</p>
+</div>
+</div>
 <p>Instruction: make a new section named Variables, and add the file paths for the input files that we have been working with.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
@@ -744,6 +825,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercise-add-targets" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-add-targets">Exercise: add targets</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add targets to your {targets} workflow.</p>
+</div>
+</div>
 <p>Instruction: set up individual targets corresponding to the three functions we developed using the adult and chick counts dataset. Head back to your testing scripts to recall how you used the functions and which arguments you need. Name your targets then pass the functions to the command argument. Fill in your Variables section and pass them as arguments in the functions.</p>
 <ul>
 <li><code>prepare_csv()</code></li>
@@ -866,7 +960,7 @@ Hint: <code>plot_xy()</code>
 <section id="bonus" class="level4">
 <h4 class="anchored" data-anchor-id="bonus">Bonus</h4>
 <ul>
-<li>add two more targets to read the other CSV files</li>
+<li>add another target to read the other CSV file</li>
 <li>add another target to load the <code>palmerpenguins</code> dataset from {palmerpenguins}</li>
 </ul>
 
