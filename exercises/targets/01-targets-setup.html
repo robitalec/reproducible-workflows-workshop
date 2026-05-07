@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">Setup</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">Setting up targets</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -387,19 +387,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/targets/01-targets-setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Setup</span></a>
+ <span class="menu-text">Setting up targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/targets/02-targets-usage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application</span></a>
+ <span class="menu-text">Application of targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/targets/03-targets-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extensions</span></a>
+ <span class="menu-text">Targets extensions</span></a>
   </div>
 </li>
       </ul>
@@ -549,15 +549,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a>
+  <li><a href="#setting-up-targets" id="toc-setting-up-targets" class="nav-link active" data-scroll-target="#setting-up-targets">Setting up targets</a>
   <ul>
-  <li><a href="#targets.r" id="toc-targets.r" class="nav-link" data-scroll-target="#targets.r"><code>_targets.R</code></a>
+  <li><a href="#targets.r" id="toc-targets.r" class="nav-link" data-scroll-target="#targets.r">_targets.R</a>
   <ul class="collapse">
-  <li><a href="#exercise-_targets.r" id="toc-exercise-_targets.r" class="nav-link" data-scroll-target="#exercise-_targets.r">Exercise: <code>_targets.R</code></a></li>
+  <li><a href="#exercise-_targets.r" id="toc-exercise-_targets.r" class="nav-link" data-scroll-target="#exercise-_targets.r">Exercise: _targets.R</a></li>
   </ul></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
   <ul class="collapse">
-  <li><a href="#exercise-packages.r" id="toc-exercise-packages.r" class="nav-link" data-scroll-target="#exercise-packages.r">Exercise: <code>packages.R</code></a></li>
+  <li><a href="#exercise-packages.r" id="toc-exercise-packages.r" class="nav-link" data-scroll-target="#exercise-packages.r">Exercise: packages.R</a></li>
   </ul></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
   <ul class="collapse">
@@ -585,14 +585,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">Setup</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">Setting up targets</a></li></ol></nav></header>
 
 
 
 
 
-<section id="setup" class="level1">
-<h1>Setup</h1>
+<section id="setting-up-targets" class="level1">
+<h1>Setting up targets</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -612,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This set of exercises are centered around an approach to setting up your project using {targets}.</p>
 <p>A {targets} pipeline is declared in the <code>_targets.R</code> file in the root of your project’s directory. We’ll also set up a central place to put all our of required packages that helps us keep track of them, and will later make it easier to set up {renv}.</p>
 <section id="targets.r" class="level2">
-<h2 class="anchored" data-anchor-id="targets.r"><code>_targets.R</code></h2>
+<h2 class="anchored" data-anchor-id="targets.r">_targets.R</h2>
 <p>The <code>_targets.R</code> is where we declare our {targets} pipeline. It is an R file saved in the root directory of your project. The generalized structure of a <code>_targets.R</code> file is:</p>
 <ul>
 <li>Load packages</li>
@@ -633,7 +633,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="exercise-_targets.r" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-_targets.r">Exercise: <code>_targets.R</code></h3>
+<h3 class="anchored" data-anchor-id="exercise-_targets.r">Exercise: _targets.R</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -659,7 +659,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>We prefer the second approach because it keeps our <code>_targets.R</code> tidier, and helps us setup {renv} package versioning and {conflicted} later. You might find your list of packages gets long, and this gets them out of our way. You can also use this script when you are exploring your results later - source the <code>packages.R</code> script and you will have all your required packages.</p>
 <section id="exercise-packages.r" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-packages.r">Exercise: <code>packages.R</code></h3>
+<h3 class="anchored" data-anchor-id="exercise-packages.r">Exercise: packages.R</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

@@ -373,19 +373,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/targets/01-targets-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup</span></a>
+ <span class="menu-text">Setting up targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/targets/02-targets-usage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application</span></a>
+ <span class="menu-text">Application of targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/targets/03-targets-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extensions</span></a>
+ <span class="menu-text">Targets extensions</span></a>
   </div>
 </li>
       </ul>
@@ -541,18 +541,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li>
 <a href="#filters" id="toc-filters" class="nav-link" data-scroll-target="#filters">Filters</a>
   <ul class="collapse">
-<li><a href="#exercise-filter_islands" id="toc-exercise-filter_islands" class="nav-link" data-scroll-target="#exercise-filter_islands">Exercise: <code>filter_islands()</code></a></li>
+<li><a href="#exercise-filter_islands" id="toc-exercise-filter_islands" class="nav-link" data-scroll-target="#exercise-filter_islands">Exercise: filter_islands()</a></li>
   </ul>
 </li>
   <li>
 <a href="#writing-checks" id="toc-writing-checks" class="nav-link" data-scroll-target="#writing-checks">Writing Checks</a>
   <ul class="collapse">
-<li><a href="#exercise-writing-checks-for-filter_islands" id="toc-exercise-writing-checks-for-filter_islands" class="nav-link" data-scroll-target="#exercise-writing-checks-for-filter_islands">Exercise: writing checks for <code>filter_islands()</code></a></li>
+<li><a href="#exercise-writing-checks-for-filter_islands" id="toc-exercise-writing-checks-for-filter_islands" class="nav-link" data-scroll-target="#exercise-writing-checks-for-filter_islands">Exercise: writing checks for filter_islands()</a></li>
   <li>
 <a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a>
   <ul class="collapse">
-<li><a href="#writing-checks-for-prepare_csv" id="toc-writing-checks-for-prepare_csv" class="nav-link" data-scroll-target="#writing-checks-for-prepare_csv">Writing checks for <code>prepare_csv()</code></a></li>
-  <li><a href="#more-informative-errors-with-stopifnot" id="toc-more-informative-errors-with-stopifnot" class="nav-link" data-scroll-target="#more-informative-errors-with-stopifnot">More informative errors with <code>stopifnot()</code></a></li>
+<li><a href="#writing-checks-for-prepare_csv" id="toc-writing-checks-for-prepare_csv" class="nav-link" data-scroll-target="#writing-checks-for-prepare_csv">Writing checks for prepare_csv()</a></li>
+  <li><a href="#more-informative-errors-with-stopifnot" id="toc-more-informative-errors-with-stopifnot" class="nav-link" data-scroll-target="#more-informative-errors-with-stopifnot">More informative errors with stopifnot()</a></li>
   </ul>
 </li>
   </ul>
@@ -722,8 +722,7 @@ Show solution
 </div>
 </div>
 </details></section><section id="filters" class="level2"><h2 class="anchored" data-anchor-id="filters">Filters</h2>
-<section id="exercise-filter_islands" class="level3"><h3 class="anchored" data-anchor-id="exercise-filter_islands">Exercise: <code>filter_islands()</code>
-</h3>
+<section id="exercise-filter_islands" class="level3"><h3 class="anchored" data-anchor-id="exercise-filter_islands">Exercise: filter_islands()</h3>
 <p>First, write a function to filter a data.frame, providing the column name for the data to be filtered and the values to filter on. Use the example data that we prepared with our <code>prepare_csv</code> function.</p>
 <p>Follow the steps from our approach to developing functions:</p>
 <ol type="1">
@@ -755,15 +754,14 @@ Hints: baseR/data.table
 <p>The function’s arguments should include the data.frame, as well as the column name for the filtering and the filter value.</p>
 Pass the data.frame’s column that you want to filter on to the plot function’s filter_col arguments with the <code>[[</code> syntax, eg. <code>DF[[x_column]]</code>
 <hr></details><details><summary>
-Hints: <code>dplyr</code>
+Hints: dplyr
 </summary><hr>
 <p>This function has one step: taking an input data.frame and filtering across a single column.</p>
 <p>The function’s arguments should include the data.frame, as well as the column name for the filtering and the filter value.</p>
 <p>Pass the data.frame’s to dplyr::filter’s data argument then use the <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code> “embrace operator” to wrap the filter_col and filter_value arguments (unquoted* column names).</p>
 <p>See the example with the “embrace operator”, and more details here: <a href="https://dplyr.tidyverse.org/articles/in-packages.html" class="uri">https://dplyr.tidyverse.org/articles/in-packages.html</a></p>
 <hr></details></section></section><section id="writing-checks" class="level2"><h2 class="anchored" data-anchor-id="writing-checks">Writing Checks</h2>
-<section id="exercise-writing-checks-for-filter_islands" class="level3"><h3 class="anchored" data-anchor-id="exercise-writing-checks-for-filter_islands">Exercise: writing checks for <code>filter_islands()</code>
-</h3>
+<section id="exercise-writing-checks-for-filter_islands" class="level3"><h3 class="anchored" data-anchor-id="exercise-writing-checks-for-filter_islands">Exercise: writing checks for filter_islands()</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -791,14 +789,12 @@ Hints: unquoted column names with <code>dplyr::filter</code>
 <p><code>as_name(enquo(filter_col)) %in% colnames(DT)</code></p>
 <p>These are {rlang} functions, part of the “tidy eval tools” and examples of metaprogramming. The Advanced R book has a detailed section on this concept.</p>
 <hr></details></section><section id="bonus" class="level3"><h3 class="anchored" data-anchor-id="bonus">Bonus</h3>
-<section id="writing-checks-for-prepare_csv" class="level4"><h4 class="anchored" data-anchor-id="writing-checks-for-prepare_csv">Writing checks for <code>prepare_csv()</code>
-</h4>
+<section id="writing-checks-for-prepare_csv" class="level4"><h4 class="anchored" data-anchor-id="writing-checks-for-prepare_csv">Writing checks for prepare_csv()</h4>
 <p>Instruction: add the following checks to your <code>prepare_csv()</code> function and test them in your test script (<code>tests/test_prepare_csv.R</code>).</p>
 <ul>
 <li>check if the path points to a file that exists</li>
 <li>before returning the object, check that it is a data.frame</li>
-</ul></section><section id="more-informative-errors-with-stopifnot" class="level4"><h4 class="anchored" data-anchor-id="more-informative-errors-with-stopifnot">More informative errors with <code>stopifnot()</code>
-</h4>
+</ul></section><section id="more-informative-errors-with-stopifnot" class="level4"><h4 class="anchored" data-anchor-id="more-informative-errors-with-stopifnot">More informative errors with stopifnot()</h4>
 <p>Instruction: Write more informative errors for your <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> checks using the following syntax: <code>stopifnot("error message" = logical_statement)</code>. Think about your user (either someone else or future you) - what would help them understand and resolve this error?</p>
 <p>For example,</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span><span class="op">(</span><span class="st">"x is not a numeric"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
