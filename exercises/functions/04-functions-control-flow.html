@@ -688,12 +688,16 @@ Show solution
 </ul>
 </li>
 </ol>
-<p>Since we have already built a function for preparing CSV files, use it in your test script:</p>
+<p>Since we have already built a function for preparing CSV files and filtering the prepared dataset, use them in your test script:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">path_counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">'raw-data'</span>, <span class="st">'adelie-adult-chick-counts.csv'</span><span class="op">)</span></span>
-<span><span class="va">prep_counts</span> <span class="op">&lt;-</span> <span class="fu">prepare_csv</span><span class="op">(</span><span class="va">path_counts</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="va">filter_col</span> <span class="op">&lt;-</span> <span class="st">'island'</span></span>
+<span><span class="va">filter_value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'TOR'</span>, <span class="st">'COR'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">prep_counts</span> <span class="op">&lt;-</span> <span class="fu">prepare_csv</span><span class="op">(</span><span class="va">path_counts</span><span class="op">)</span></span>
+<span><span class="va">filter_counts</span> <span class="op">&lt;-</span> <span class="fu">filter_islands</span><span class="op">(</span><span class="va">prep_counts</span>, <span class="va">filter_col</span>, <span class="va">filter_value</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Add a new section ‘Development’ in the test script (<code>tests/test_sum_counts.R</code>) to develop the body of your function. Use the prepared CSV data as shown above, add the code to your function <code>sum_counts()</code> and test!</p>
+<p>Add a new section ‘Development’ in the test script (<code>tests/test_sum_counts.R</code>) to develop the body of your function. Use the prepared and filtered CSV data as shown above, add the code to your function <code>sum_counts()</code> and test!</p>
 <details><summary>
 Hints: by
 </summary><hr>
@@ -702,7 +706,7 @@ Hints: by
 <hr></details><p>Next steps:</p>
 <ul>
 <li>decide if it is better for you (or a potential user) to set the columns that we calculate the sum by inside the function (fixed) or as an argument (flexible) - try both options</li>
-<li>add a filter argument <code>filter_gt_year</code> (default set to NULL) and when it is not NULL, filter the data only greater than the value provided</li>
+<li>add a filter argument <code>filter_gt_adults</code> (default set to NULL) and when it is not NULL, filter the data only greater than the value provided</li>
 </ul>
 <p>Test these as you go in your test script <code>tests/test_sum_counts.R</code>.</p>
 <details><summary>
@@ -713,12 +717,14 @@ Hints: defaults
 <span></span>
 <span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr></details></section><section id="bonus" class="level3"><h3 class="anchored" data-anchor-id="bonus">Bonus</h3>
-<p>Add checks to your functions <code>plot_xy()</code> and <code>sum_counts()</code>:</p>
 <ul>
-<li>use the arguments <code>x_col</code> and <code>y_col</code> to also update the axis labels in <code>plot_xy()</code> (base R)</li>
-<li>use a new argument <code>color_col</code> to provide a column in <code>plot_xy()</code>
+<li>add checks to your function <code>sum_counts()</code>
 </li>
-<li>build a plot function that plots the output of <code>sum_counts()</code>
+<li>build a plot function that plots the output of <code>sum_counts()</code> called <code>plot_xy()</code>
+</li>
+<li>add <code>x_col</code> and <code>y_col</code> arguments to your plot function to dynamically update plot</li>
+<li>use <code>x_col</code> and <code>y_col</code> arguments to also update the axis labels in <code>plot_xy()</code> (base R)</li>
+<li>use a new argument <code>color_col</code> to provide a column in <code>plot_xy()</code>
 </li>
 </ul>
 

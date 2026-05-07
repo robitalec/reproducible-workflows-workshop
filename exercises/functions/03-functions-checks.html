@@ -539,21 +539,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#logical-statements" id="toc-logical-statements" class="nav-link" data-scroll-target="#logical-statements">Logical statements</a></li>
   <li><a href="#exercise-function-checks" id="toc-exercise-function-checks" class="nav-link" data-scroll-target="#exercise-function-checks">Exercise: function checks</a></li>
   <li>
-<a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a>
+<a href="#filters" id="toc-filters" class="nav-link" data-scroll-target="#filters">Filters</a>
   <ul class="collapse">
-<li><a href="#exercise-plot_xy" id="toc-exercise-plot_xy" class="nav-link" data-scroll-target="#exercise-plot_xy">Exercise: <code>plot_xy()</code></a></li>
+<li><a href="#exercise-filter_islands" id="toc-exercise-filter_islands" class="nav-link" data-scroll-target="#exercise-filter_islands">Exercise: <code>filter_islands()</code></a></li>
   </ul>
 </li>
   <li>
 <a href="#writing-checks" id="toc-writing-checks" class="nav-link" data-scroll-target="#writing-checks">Writing Checks</a>
   <ul class="collapse">
-<li><a href="#exercise-writing-checks-for-plot_xy" id="toc-exercise-writing-checks-for-plot_xy" class="nav-link" data-scroll-target="#exercise-writing-checks-for-plot_xy">Exercise: writing checks for <code>plot_xy()</code></a></li>
+<li><a href="#exercise-writing-checks-for-filter_islands" id="toc-exercise-writing-checks-for-filter_islands" class="nav-link" data-scroll-target="#exercise-writing-checks-for-filter_islands">Exercise: writing checks for <code>filter_islands()</code></a></li>
   <li>
 <a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a>
   <ul class="collapse">
 <li><a href="#writing-checks-for-prepare_csv" id="toc-writing-checks-for-prepare_csv" class="nav-link" data-scroll-target="#writing-checks-for-prepare_csv">Writing checks for <code>prepare_csv()</code></a></li>
   <li><a href="#more-informative-errors-with-stopifnot" id="toc-more-informative-errors-with-stopifnot" class="nav-link" data-scroll-target="#more-informative-errors-with-stopifnot">More informative errors with <code>stopifnot()</code></a></li>
-  <li><a href="#add-a-color_by-argument-to-plot_xy" id="toc-add-a-color_by-argument-to-plot_xy" class="nav-link" data-scroll-target="#add-a-color_by-argument-to-plot_xy">Add a <code>color_by</code> argument to <code>plot_xy()</code></a></li>
   </ul>
 </li>
   </ul>
@@ -722,52 +721,48 @@ Show solution
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-</details></section><section id="plotting" class="level2"><h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
-<section id="exercise-plot_xy" class="level3"><h3 class="anchored" data-anchor-id="exercise-plot_xy">Exercise: <code>plot_xy()</code>
+</details></section><section id="filters" class="level2"><h2 class="anchored" data-anchor-id="filters">Filters</h2>
+<section id="exercise-filter_islands" class="level3"><h3 class="anchored" data-anchor-id="exercise-filter_islands">Exercise: <code>filter_islands()</code>
 </h3>
-<p>First, write a function to plot a data.frame, providing columns names for the data to be plotted on the x and y axes. Use the example data that we prepared with our <code>prepare_csv</code> function.</p>
+<p>First, write a function to filter a data.frame, providing the column name for the data to be filtered and the values to filter on. Use the example data that we prepared with our <code>prepare_csv</code> function.</p>
 <p>Follow the steps from our approach to developing functions:</p>
 <ol type="1">
 <li>Setup the function
 <ul>
-<li>Make a function script in the <code>R/</code> directory named <code>plot_xy.R</code>
+<li>Make a function script in the <code>R/</code> directory named <code>filter_islands.R</code>
 </li>
 <li>Write the function’s skeleton (name, arguments, curly braces)</li>
 </ul>
 </li>
 <li>Setup the test script
 <ul>
-<li>Make a corresponding test script in the <code>tests/</code> directory named <code>test_plot_xy.R</code>.</li>
+<li>Make a corresponding test script in the <code>tests/</code> directory named <code>test_filter_islands.R</code>.</li>
 <li>Load any required packages (<code><a href="https://rdrr.io/r/base/library.html">library(package)</a></code>)</li>
 <li>Source the function (<code>source('R/function.R)</code>)</li>
 <li>Load example data and/or arguments for the function</li>
 </ul>
 </li>
 </ol>
-<p>Add a new section ‘Development’ in the test script (<code>tests/test_plot_xy.R</code>) to develop the body of your function. Since we have already built a function for preparing CSV files, use it in your test script, and your choice of base R plotting or {ggplot2}. Add the code to your function <code>plot_xy()</code> and test!</p>
+<p>Add a new section ‘Development’ in the test script (<code>tests/test_filter_islands.R</code>) to develop the body of your function. Since we have already built a function for preparing CSV files, use it in your test script, and your choice of baseR/data.table or dplyr functions. Add the code to your function <code>filter_islands()</code> and test!</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">path_counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">'raw-data'</span>, <span class="st">'adelie-adult-chick-counts.csv'</span><span class="op">)</span></span>
 <span><span class="va">prep_counts</span> <span class="op">&lt;-</span> <span class="fu">prepare_csv</span><span class="op">(</span><span class="va">path_counts</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <details><summary>
-Hints: base R
+Hints: baseR/data.table
 </summary><hr>
-<p>This function has one step: taking an input data.frame and generating a plot.</p>
-<p>The function’s arguments should include the data.frame, as well as the column names for the X and Y axes.</p>
-Pass the data.frame’s to the plot function’s x and y arguments with the <code>[[</code> syntax, eg. <code>DF[[x_column]]</code>
+<p>This function has one step: taking an input data.frame and filtering across a single column.</p>
+<p>The function’s arguments should include the data.frame, as well as the column name for the filtering and the filter value.</p>
+Pass the data.frame’s column that you want to filter on to the plot function’s filter_col arguments with the <code>[[</code> syntax, eg. <code>DF[[x_column]]</code>
 <hr></details><details><summary>
-Hints: <code>ggplot2</code>
+Hints: <code>dplyr</code>
 </summary><hr>
-<p>This function has one step: taking an input data.frame and generating a plot.</p>
-<p>The function’s arguments should include the data.frame, as well as the column names for the X and Y axes.</p>
-<p>There are two main options:</p>
-<ul>
-<li><p>Pass the data.frame’s to ggplot’s data argument then use the <code>.data[[col]]</code> syntax to wrap the x_col and y_col arguments (quoted column names) within <code>aes</code>.</p></li>
-<li><p>Pass the data.frame’s to ggplot’s data argument then use the <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code> “embrace operator” to wrap the x_col and y_col arguments (unquoted* column names) within <code>aes</code>.</p></li>
-</ul>
-<p>See the <code>?aes</code> help page and the example with the “embrace operator”, and more details here: <a href="https://ggplot2.tidyverse.org/articles/ggplot2-in-packages.html#using-aes-and-vars-in-a-package-function" class="uri">https://ggplot2.tidyverse.org/articles/ggplot2-in-packages.html#using-aes-and-vars-in-a-package-function</a></p>
+<p>This function has one step: taking an input data.frame and filtering across a single column.</p>
+<p>The function’s arguments should include the data.frame, as well as the column name for the filtering and the filter value.</p>
+<p>Pass the data.frame’s to dplyr::filter’s data argument then use the <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code> “embrace operator” to wrap the filter_col and filter_value arguments (unquoted* column names).</p>
+<p>See the example with the “embrace operator”, and more details here: <a href="https://dplyr.tidyverse.org/articles/in-packages.html" class="uri">https://dplyr.tidyverse.org/articles/in-packages.html</a></p>
 <hr></details></section></section><section id="writing-checks" class="level2"><h2 class="anchored" data-anchor-id="writing-checks">Writing Checks</h2>
-<section id="exercise-writing-checks-for-plot_xy" class="level3"><h3 class="anchored" data-anchor-id="exercise-writing-checks-for-plot_xy">Exercise: writing checks for <code>plot_xy()</code>
+<section id="exercise-writing-checks-for-filter_islands" class="level3"><h3 class="anchored" data-anchor-id="exercise-writing-checks-for-filter_islands">Exercise: writing checks for <code>filter_islands()</code>
 </h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -782,17 +777,18 @@ Hints: <code>ggplot2</code>
 <p>Write and test a complete function.</p>
 </div>
 </div>
-<p>Instruction: add the following checks to your <code>plot_xy()</code> function and test them in your test script (<code>tests/test_plot_xy.R</code>).</p>
+<p>Instruction: add the following checks to your <code>filter_islands()</code> function and test them in your test script (<code>tests/test_filter_islands.R</code>).</p>
 <ul>
-<li>check if the columns provided to the <code>x_col</code> and <code>y_col</code> arguments exist in the data.frame (quoted column name arguments)</li>
-<li>check if the plot generated is of class <code>ggplot</code> before returning (<code>ggplot2</code>)</li>
+<li>check if the columns provided to the <code>filter_col</code> arguments exist in the data.frame (quoted column name arguments)</li>
+<li>check that the values provided to the <code>filter_value</code> arguments are present in the <code>filter_col</code> column</li>
+<li>check that the output is a data.frame</li>
 </ul>
 <details><summary>
-Hints: unquoted column names with <code>ggplot2</code>
+Hints: unquoted column names with <code>dplyr::filter</code>
 </summary><hr>
-<p>If you opted to use unquoted column names, it might be trickier to check if column names exist in the data.frame. However - this check is already covered by <code>ggplot()</code> anyways.</p>
-<p>In case you wanted to add this, on top of the internal <code>ggplot2</code> check, try something like this:</p>
-<p><code>as_name(enquo(x_col)) %in% colnames(DT)</code></p>
+<p>If you opted to use unquoted column names, it might be trickier to check if column names exist in the data.frame. However - this check is already covered by <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> anyways.</p>
+<p>In case you wanted to add this, on top of the internal <code>filter</code> check, try something like this:</p>
+<p><code>as_name(enquo(filter_col)) %in% colnames(DT)</code></p>
 <p>These are {rlang} functions, part of the “tidy eval tools” and examples of metaprogramming. The Advanced R book has a detailed section on this concept.</p>
 <hr></details></section><section id="bonus" class="level3"><h3 class="anchored" data-anchor-id="bonus">Bonus</h3>
 <section id="writing-checks-for-prepare_csv" class="level4"><h4 class="anchored" data-anchor-id="writing-checks-for-prepare_csv">Writing checks for <code>prepare_csv()</code>
@@ -806,9 +802,6 @@ Hints: unquoted column names with <code>ggplot2</code>
 <p>Instruction: Write more informative errors for your <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> checks using the following syntax: <code>stopifnot("error message" = logical_statement)</code>. Think about your user (either someone else or future you) - what would help them understand and resolve this error?</p>
 <p>For example,</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span><span class="op">(</span><span class="st">"x is not a numeric"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="add-a-color_by-argument-to-plot_xy" class="level4"><h4 class="anchored" data-anchor-id="add-a-color_by-argument-to-plot_xy">Add a <code>color_by</code> argument to <code>plot_xy()</code>
-</h4>
-<p>Instruction: using the same approach you used for <code>x_col</code> and <code>y_col</code>, add a <code>color_col</code> argument to <code>plot_xy()</code>.</p>
 
 
 </section></section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
