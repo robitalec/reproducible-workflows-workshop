@@ -514,17 +514,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#renv" id="toc-renv" class="nav-link active" data-scroll-target="#renv">{renv}</a>
+  <li><a href="#dependency-management" id="toc-dependency-management" class="nav-link active" data-scroll-target="#dependency-management">Dependency management</a>
   <ul>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
   <ul class="collapse">
   <li><a href="#exercise-setting-up-renv" id="toc-exercise-setting-up-renv" class="nav-link" data-scroll-target="#exercise-setting-up-renv">Exercise: setting up {renv}</a></li>
   </ul></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a>
   <ul class="collapse">
   <li><a href="#exercise-using-renv" id="toc-exercise-using-renv" class="nav-link" data-scroll-target="#exercise-using-renv">Exercise: using {renv}</a></li>
   </ul></li>
-  <li><a href="#sharing" id="toc-sharing" class="nav-link" data-scroll-target="#sharing">Sharing</a>
+  <li><a href="#sharing" id="toc-sharing" class="nav-link" data-scroll-target="#sharing">Sharing</a></li>
+  <li><a href="#alternatives" id="toc-alternatives" class="nav-link" data-scroll-target="#alternatives">Alternatives</a>
   <ul class="collapse">
   <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a></li>
   </ul></li>
@@ -539,8 +540,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="renv" class="level1">
-<h1>{renv}</h1>
+<section id="dependency-management" class="level1">
+<h1>Dependency management</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -565,15 +566,29 @@ ul.task-list li input[type="checkbox"] {
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>The first time you set up a project with {renv}, use the function <code>init()</code>. <code>init()</code> writes a file to the root of your project called <code>renv.lock</code> that tracks the versions and dependencies of R packages installed and the version of R itself. This is a simple text file, so feel free to open it up (but don’t edit) in a text editor.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>renv::use()</code> does not initiate an {renv} file. It is used only in very specific circumstances (read more <a href="https://rstudio.github.io/renv/reference/embed.html">here</a>). To start using {renv} in a project, use the function <code>renv::init()</code></p>
+</div>
+</div>
 <section id="exercise-setting-up-renv" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-setting-up-renv">Exercise: setting up {renv}</h3>
 <p>Instruction: in the console of your project, initialize {renv} with <code>init()</code>.</p>
 </section>
 </section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">Application</h2>
 <p>As you work on your project and add or update packages, record your packages used and their version with <code>snapshot()</code>. This will edit the <code>renv.lock</code> file with new versions and packages that describe the package’s environment.</p>
 <p>You can always check the status of your {renv} project with <code>status()</code> to see which packages are installed but not recorded, or which packages are recorded but no longer used.</p>
+<p>If you have a one-off package that you want to add to the lockfile so that you can continue working, <code>record()</code> is a useful function. It can change the lockfile, i.e., add or update a package, for one (or more) package at a time.</p>
 <section id="exercise-using-renv" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-using-renv">Exercise: using {renv}</h3>
 <p>Instruction: install a new package with <code>install.packages()</code> then run <code>status()</code>. Follow {renv}’s recommendations to either save (<code>snapshot()</code>) or discard (<code>restore()</code>) these potential changes to your project’s environment.</p>
@@ -584,6 +599,14 @@ ul.task-list li input[type="checkbox"] {
 <p><code>snapshot()</code> is used to save the current state of your project while <code>restore()</code> to recover the state of your project as it was last saved. When you download someone else’s project, you can use <code>restore()</code> to retrieve and install the versions of packages in the project that were recorded.</p>
 <p>Before sharing your project (and regularly while you work even if not sharing), make sure your project is up to date by running <code>snapshot()</code>.</p>
 <p>To restore from an <code>renv.lock</code> file, simply run <code>restore()</code>.</p>
+<p>At times, {renv} can be difficult to use. Especially with an ongoing project, {renv} can feel like it is slowing you down and making things more confusing, instead of increasing transparency.</p>
+<p>One option to address {renv} issues is deactivating (<code>deactivate()</code>) while actively working on a project, then activating (<code>activate()</code>) when you are ready to share and have your dependencies recorded.</p>
+</section>
+<section id="alternatives" class="level2">
+<h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
+<p><a href="https://pak.r-lib.org/">pak</a> is a very powerful package installer has many of the same capabilities as {renv}.</p>
+<p>You can create a lockfile that records the installed packages using <code>pak::lockfile_create()</code> and install packages later using <code>pak::lockfile_install()</code>.</p>
+<p>pak can be configured with {renv} to have fast package installation and clear management (<a href="https://rstudio.github.io/renv/reference/config.html?q=pak#renv-config-pak-enabled">documentation</a>)</p>
 <section id="bonus" class="level3">
 <h3 class="anchored" data-anchor-id="bonus">Bonus</h3>
 <p>Git is really helpful when working with {renv} because we can track the <code>renv.lock</code> file’s history for changes through time. See these examples:</p>
