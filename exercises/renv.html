@@ -558,20 +558,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use {renv} to preserve current package versions to ensure the environment is reproducible, portable and isolated</p>
+<p>Use {renv} to record current package versions to ensure the environment is reproducible, portable and isolated</p>
 </div>
 </div>
-<p>{renv} helps us create more reproducible and shareable projects by allowing us to run code on different machines, across time, by different people. It essentially takes the packages used in your project and records their versions in a file that you can update as you develop the project. When you come back to your project, or share it with someone else, they are using the same versions of packages and R that you were.</p>
-<p>The three main functions used when working with {renv} are:</p>
+<p>{renv} helps us create more reproducible and shareable projects by allowing us to run the same versions of R packages on different machines, across time, and by different people. It takes the packages used in your project and records their versions in a file that you can update as you develop the project. When you come back to your project, or share it with someone else, it ensures they are using the same versions of packages and R that you were.</p>
+<p>The main functions used when working with {renv} are:</p>
 <ul>
 <li><p><code>init()</code> for setting up project to use {renv} for the first time</p></li>
-<li><p><code>snapshot()</code> for recording versions of packages currently installed in the project in the file <code>renv.lock</code></p></li>
-<li><p><code>restore()</code> for restoring a project’s package versions to match the versions recorded by {renv} from the file <code>renv.lock</code></p></li>
+<li><p><code>snapshot()</code> for recording versions of packages currently installed in the project in the lockfile</p></li>
+<li><p><code>restore()</code> for restoring a project’s package versions to match the versions recorded by {renv} from the lockfile</p></li>
+<li><p><code>status()</code> for checking the status of a project, ensuring that the packages installed correspond to the lockfile in the project</p></li>
 </ul>
-<p>Note: {renv} will not install a different version of R, or any other system dependencies that are required. However, {renv} will warn if the <code>renv.lock</code> lists a version of R that differs from your current version of R. For system dependencies that are required but not installed, R will fail.</p>
+<p>Note: {renv} will not install a different version of R, or any other system dependencies that are required. However, {renv} will warn if the <code>renv.lock</code> lists a version of R that differs from your current version of R. You can however use the function <code>sysreqs()</code> to return an estimate of the system requirements for your machine, that you can install before the R packages. If you run a supported version of Linux, check out the <a href="https://pak.r-lib.org/reference/sysreqs.html">{pak} vignette on system requirements</a>.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>The first time you set up a project with {renv}, use the function <code>init()</code>. <code>init()</code> writes a file to the root of your project called <code>renv.lock</code> that tracks the versions and dependencies of R packages installed and the version of R itself. This is a simple text file, so feel free to open it up (but don’t edit) in a text editor.</p>
+<p>The first time you set up a project with {renv}, use the function <code>init()</code>. <code>init()</code> writes a file to the root of your project called <code>renv.lock</code> that tracks the versions and dependencies of R packages installed and the version of R itself. This is a simple text file, so feel free to open it up (but don’t edit) in a text editor. It also edits the project specific <code>.Rprofile</code> to ensure that {renv} is loaded when the project is opened.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -582,7 +583,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>renv::use()</code> does not initiate an {renv} file. It is used only in very specific circumstances (read more <a href="https://rstudio.github.io/renv/reference/embed.html">here</a>). To start using {renv} in a project, use the function <code>renv::init()</code></p>
+<p><code>renv::use()</code> does not initiate an {renv} file. It is used only in very specific circumstances (read more <a href="https://rstudio.github.io/renv/reference/embed.html">here</a>). To start using {renv} in a project, use the function <code>renv::init()</code>.</p>
 </div>
 </div>
 <section id="exercise-setting-up-renv" class="level3">
@@ -612,7 +613,7 @@ Warning
 <h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
 <p><a href="https://pak.r-lib.org/">pak</a> is a very powerful package installer has many of the same capabilities as {renv}.</p>
 <p>You can create a lockfile that records the installed packages using <code>pak::lockfile_create()</code> and install packages later using <code>pak::lockfile_install()</code>.</p>
-<p>pak can be configured with {renv} to have fast package installation and clear management (<a href="https://rstudio.github.io/renv/reference/config.html?q=pak#renv-config-pak-enabled">documentation</a>)</p>
+<p>pak can be configured with {renv} to have fast package installation and clear management (<a href="https://rstudio.github.io/renv/reference/config.html?q=pak#renv-config-pak-enabled">documentation</a>).</p>
 <section id="bonus" class="level3">
 <h3 class="anchored" data-anchor-id="bonus">Bonus</h3>
 <p>Git is really helpful when working with {renv} because we can track the <code>renv.lock</code> file’s history for changes through time. See these examples:</p>
