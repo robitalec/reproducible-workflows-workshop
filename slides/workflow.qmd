@@ -25,7 +25,7 @@ format: revealjs
 
 ```{r}
 #| include: false
-setwd('example-targets-workflow')
+setwd('projects/example-targets-workflow')
 vis <- targets::tar_visnetwork(targets_only = TRUE)
 ```
 
