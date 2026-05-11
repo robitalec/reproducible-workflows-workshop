@@ -480,6 +480,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Functions</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example workflow</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -549,13 +555,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reproducible-workflows-workshop" id="toc-reproducible-workflows-workshop" class="nav-link active" data-scroll-target="#reproducible-workflows-workshop">Reproducible workflows workshop</a>
+  <li><a href="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" id="toc-developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="nav-link active" data-scroll-target="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</a>
   <ul>
-  <li><a href="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" id="toc-developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="nav-link" data-scroll-target="#developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</a>
-  <ul class="collapse">
-  <li><a href="#alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador" id="toc-alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador" class="nav-link" data-scroll-target="#alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador">Alec L. Robitaille (Memorial Unviersity of Newfoundland and Labrador)</a></li>
-  <li><a href="#isabella-c.-richmond-concordia-university" id="toc-isabella-c.-richmond-concordia-university" class="nav-link" data-scroll-target="#isabella-c.-richmond-concordia-university">Isabella C. Richmond (Concordia University)</a></li>
-  </ul></li>
   <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
@@ -564,6 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#weather-timeseries" id="toc-weather-timeseries" class="nav-link" data-scroll-target="#weather-timeseries">Weather timeseries</a></li>
   <li><a href="#adelie-penguin-adult-and-chick-counts" id="toc-adelie-penguin-adult-and-chick-counts" class="nav-link" data-scroll-target="#adelie-penguin-adult-and-chick-counts">Adelie penguin adult and chick counts</a></li>
   </ul></li>
+  <li><a href="#vocabulary" id="toc-vocabulary" class="nav-link" data-scroll-target="#vocabulary">Vocabulary</a></li>
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">LICENSE</a></li>
   </ul></li>
   </ul>
@@ -576,34 +578,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="reproducible-workflows-workshop" class="level1">
-<h1>Reproducible workflows workshop</h1>
-<section id="developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="level2">
-<h2 class="anchored" data-anchor-id="developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv">Developing a reproducible workflow in R using functions, {targets} and {renv}</h2>
-<section id="alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador" class="level4">
-<h4 class="anchored" data-anchor-id="alec-l.-robitaille-memorial-unviersity-of-newfoundland-and-labrador">Alec L. Robitaille (Memorial Unviersity of Newfoundland and Labrador)</h4>
-</section>
-<section id="isabella-c.-richmond-concordia-university" class="level4">
-<h4 class="anchored" data-anchor-id="isabella-c.-richmond-concordia-university">Isabella C. Richmond (Concordia University)</h4>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learning Goal
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We designed this workshop so that by the ends participants will be able to approach analyses in a more holistic way (whole project vs script by script), share data across projects and software versions with minimal stress, and use workflows that reduce analysis errors and mental load</p>
-</div>
-</div>
-<p>A small vocabulary note: we use “workflow” and “pipeline” interchangeably throughout this workshop.</p>
-</section>
-</section>
+<section id="developing-a-reproducible-workflow-in-r-using-functions-targets-and-renv" class="level1">
+<h1>Developing a reproducible workflow in R using functions, {targets} and {renv}</h1>
+<p>This workshop is designed to introduce function-oriented programming as an alternative to script-based workflows. Functions are combined with input data in a {targets} pipeline to reduce analysis errors and mental load. {renv} and {conflicted} are introduced to help manage package versions and conflicts.</p>
+<p>Developed by Alec L. Robitaille (Memorial University of Newfoundland and Labrador) and Isabella C. Richmond (Concordia University) and first delivered as a <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop">workshop</a> for the 2023 conference of Canadian Society for Ecology and Evolution.</p>
 <section id="schedule" class="level2">
 <h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
-<p>Originally developed for a <a href="https://github.com/robitalec/2023-CSEE-reproducible-workflows-workshop">workshop</a> at CSEE 2023</p>
 <p>Projects</p>
 <ul>
 <li>Directories</li>
@@ -636,45 +616,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>This workshop is aimed at improving our ability to use and create <em>reproducible workflows.</em> All the materials should be accessible from the side bar (slides, exercises, resources for further reading, and the link to the GitHub repository can be accessed by clicking on the GitHub icon).</p>
-<p>We don’t have any strict dependencies on specific versions of R or R packages, but it would be good to have at least R version 4.0 and a recent version of RStudio.&nbsp;</p>
-<p>We are using Quarto to build the workshop’s website and exercises, so it could be helpful for you to install it too. If you don’t have time to, you can always complete exercises in an R script - so no pressure.&nbsp;</p>
-<p>Install first the Quarto CLI from the <a href="https://quarto.org/docs/get-started/">here</a> then the package with the command at the bottom.</p>
+<p>This workshop is aimed at improving our ability to use and create <em>reproducible workflows.</em> All the materials should be accessible from the side bar (slides, exercises, resources for further reading, and the accompanying GitHub repository.</p>
+<p>We don’t have any strict dependencies on specific versions of R or R packages, but it would be good to have updated versions of the packages below and at least R version &gt; 4.0.</p>
+<p>We are using Quarto to build the workshop’s website and for some exercises, so it would be helpful for you to install it too. Install first the Quarto CLI from the <a href="https://quarto.org/docs/get-started/">here</a> then the package with the command at the bottom.</p>
 <p>Please install the following packages (after updating R):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'targets'</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'igraph'</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'data.table'</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'dplyr'</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'ggplot2'</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'testthat'</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'janitor'</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'renv'</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'rlang'</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'conflicted'</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'palmerpenguins'</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'visNetwork'</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="st">'quarto'</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'targets'</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'igraph'</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'data.table'</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dplyr'</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">'ggplot2'</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'testthat'</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">'janitor'</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">'renv'</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">'rlang'</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">'conflicted'</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">'palmerpenguins'</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">'visNetwork'</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">'quarto'</span>,</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">'xml2'</span>,</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">'downlit'</span>,</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">'usethis'</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>******BROKEN*************** To download the workshop materials for a participant, use this command:</p>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'pak'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(pkgs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To download the workshop materials, use this command:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (Set your own destination directory)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">use_course</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/participant.zip'</span>, </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">destdir =</span> <span class="st">'~/Documents'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Or by downloading and unziping the ZIP file at this link: <a href="https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/participant.zip" class="uri">https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/participant.zip</a>.</p>
-<hr>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/main.zip'</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">destdir =</span> <span class="st">'~/Documents'</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or by downloading and unziping the ZIP file at this link: <a href="https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/main.zip" class="uri">https://github.com/robitalec/reproducible-workflows-workshop/archive/refs/heads/main.zip</a>.</p>
 <p>Then open up the RStudio project.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Example data for this workshop is borrowed from the Palmer Long-Term Ecological Research (LTER). Here is the study description from the <a href="https://pallter.marine.rutgers.edu/">Palmer LTER site</a>:</p>
+<p>Example data for this workshop are borrowed from the Palmer Long-Term Ecological Research (LTER). Here is the study description from the <a href="https://pallter.marine.rutgers.edu/">Palmer LTER site</a>:</p>
 <blockquote class="blockquote">
 <p>The Palmer Long-Term Ecological Research (LTER) study area is located to the west of the Antarctic Peninsula extending South and North of the Palmer Basin from onshore to several hundred kilometers off shore. Palmer Station is one of the three United States research stations located in Antarctica. It is on Anvers Island midway down the Antarctic Peninsula at latitude 64.7 South, longitude 64.0 West.</p>
 </blockquote>
@@ -721,23 +700,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="adelie-penguin-adult-and-chick-counts">Adelie penguin adult and chick counts</h3>
 <p>The third dataset contains Adelie penguin adult and chick counts</p>
 <ul>
-<li>studyName<br>
-</li>
-<li>Date GMT<br>
-</li>
-<li>Time GMT<br>
-</li>
-<li>Island<br>
-</li>
-<li>Colony<br>
-</li>
-<li>Adults<br>
-</li>
+<li>studyName</li>
+<li>Date GMT</li>
+<li>Time GMT</li>
+<li>Island</li>
+<li>Colony</li>
+<li>Adults</li>
 <li>Chicks</li>
 </ul>
 <p><a href="https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-pal.88.8">Data package metadata</a></p>
 <p><a href="https://github.com/PAL-LTER/pal-seabirds/blob/main/formatted/Adelie_Chick_Production/Adelie_Chick_Production_1992_2020.csv">Data download link (CSV)</a></p>
 </section>
+</section>
+<section id="vocabulary" class="level2">
+<h2 class="anchored" data-anchor-id="vocabulary">Vocabulary</h2>
+<p>A small vocabulary note: we use “workflow” and “pipeline” interchangeably throughout this workshop.</p>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">LICENSE</h2>

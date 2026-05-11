@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.37">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>targets-usage – Reproducible workflows workshop</title>
+<meta name="author" content="Alec L. Robitaille, Isabella C. Richmond">
+<title>Example workflow – Reproducible workflows workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,66 +21,29 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-1c5d05e776d8cc6ed79b334dc06cf84a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1c5d05e776d8cc6ed79b334dc06cf84a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -108,11 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
+}</script><link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="../site_libs/vis-9.1.0/vis-network.min.css" rel="stylesheet">
+<script src="../site_libs/vis-9.1.0/vis-network.min.js"></script><script src="../site_libs/visNetwork-binding-2.1.4/visNetwork.js"></script>
 </head>
-
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -278,28 +238,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/02-targets-usage.html">Application of targets</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../slides/projects.html">Slides</a></li><li class="breadcrumb-item"><a href="../slides/workflow.html">Example workflow</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Reproducible workflows workshop</a> 
+      <a href="../">Reproducible workflows workshop</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/robitalec/reproducible-workflows-workshop" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -313,9 +267,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -327,10 +281,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
   </div>
 </li>
@@ -342,82 +296,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/functions/01-functions-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/functions/01-functions-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/functions/02-functions-development.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/functions/02-functions-development.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developing functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/functions/03-functions-checks.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/functions/03-functions-checks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Checks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/functions/04-functions-control-flow.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/functions/04-functions-control-flow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Controlling flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/functions/05-functions-bonus.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/functions/05-functions-bonus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bonus</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">targets</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/targets/01-targets-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/targets/01-targets-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting up targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/targets/02-targets-usage.html" class="sidebar-item-text sidebar-link active">
+  <a href="../exercises/targets/02-targets-usage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application of targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/targets/03-targets-extensions.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/targets/03-targets-extensions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Targets extensions</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/renv.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/renv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">renv</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/conflicted.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/conflicted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">conflicted</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -426,39 +380,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/01-projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/01-projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/02-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/02-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/03-targets.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/03-targets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/04-renv.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/04-renv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">renv</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/05-conflicted.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/05-conflicted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">conflicted</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -467,27 +421,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../slides/projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Setup &amp; Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../slides/functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../slides/workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/workflow.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Example workflow</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -496,8 +450,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">README</span></a>
@@ -505,27 +459,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../_templates/README/dataset-template.md" class="sidebar-item-text sidebar-link">
+  <a href="../_templates/README/dataset-template.md" class="sidebar-item-text sidebar-link">
  <span class="menu-text">dataset-template.md</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../_templates/README/data-project-template.md" class="sidebar-item-text sidebar-link">
+  <a href="../_templates/README/data-project-template.md" class="sidebar-item-text sidebar-link">
  <span class="menu-text">dataset-project-template.md</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../_templates/README/paper-template.md" class="sidebar-item-text sidebar-link">
+  <a href="../_templates/README/paper-template.md" class="sidebar-item-text sidebar-link">
  <span class="menu-text">data-project_template.md</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
@@ -534,280 +488,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../_templates/test_function.R" class="sidebar-item-text sidebar-link">
+  <a href="../_templates/test_function.R" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test_function.R</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#application-of-targets" id="toc-application-of-targets" class="nav-link active" data-scroll-target="#application-of-targets">Application of targets</a>
-  <ul>
-  <li><a href="#tar_visnetwork" id="toc-tar_visnetwork" class="nav-link" data-scroll-target="#tar_visnetwork">tar_visnetwork()</a>
-  <ul class="collapse">
-  <li><a href="#exercise-tar_visnetwork" id="toc-exercise-tar_visnetwork" class="nav-link" data-scroll-target="#exercise-tar_visnetwork">Exercise: tar_visnetwork()</a></li>
-  </ul></li>
-  <li><a href="#tar_make" id="toc-tar_make" class="nav-link" data-scroll-target="#tar_make">tar_make()</a>
-  <ul class="collapse">
-  <li><a href="#exercise-tar_make" id="toc-exercise-tar_make" class="nav-link" data-scroll-target="#exercise-tar_make">Exercise: tar_make()</a></li>
-  </ul></li>
-  <li><a href="#tar_read-tar_load" id="toc-tar_read-tar_load" class="nav-link" data-scroll-target="#tar_read-tar_load">tar_read(), tar_load()</a>
-  <ul class="collapse">
-  <li><a href="#exercise-tar_read-tar_load" id="toc-exercise-tar_read-tar_load" class="nav-link" data-scroll-target="#exercise-tar_read-tar_load">Exercise: tar_read(), tar_load()</a></li>
-  </ul></li>
-  <li><a href="#tar_meta" id="toc-tar_meta" class="nav-link" data-scroll-target="#tar_meta">tar_meta()</a>
-  <ul class="collapse">
-  <li><a href="#exercise-tar_meta" id="toc-exercise-tar_meta" class="nav-link" data-scroll-target="#exercise-tar_meta">Exercise: tar_meta()</a></li>
-  </ul></li>
-  <li><a href="#edits-rerun-edits" id="toc-edits-rerun-edits" class="nav-link" data-scroll-target="#edits-rerun-edits">Edits, rerun, edits, …</a>
-  <ul class="collapse">
-  <li><a href="#exercise-practice-the-targets-approach" id="toc-exercise-practice-the-targets-approach" class="nav-link" data-scroll-target="#exercise-practice-the-targets-approach">Exercise: practice the {targets} approach</a></li>
-  </ul></li>
-  <li><a href="#forcing-reruns" id="toc-forcing-reruns" class="nav-link" data-scroll-target="#forcing-reruns">Forcing reruns</a></li>
-  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a></li>
-  </ul></li>
-  </ul>
-</nav>
+<li><a href="#why-workflows" id="toc-why-workflows" class="nav-link active" data-scroll-target="#why-workflows">Why workflows?</a></li>
+  <li><a href="#why-targets" id="toc-why-targets" class="nav-link" data-scroll-target="#why-targets">Why {targets}?</a></li>
+  <li><a href="#what-does-it-look-like" id="toc-what-does-it-look-like" class="nav-link" data-scroll-target="#what-does-it-look-like">What does it look like?</a></li>
+  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="workflow.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/02-targets-usage.html">Application of targets</a></li></ol></nav></header>
-
-
-
-
-
-<section id="application-of-targets" class="level1">
-<h1>Application of targets</h1>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../slides/projects.html">Slides</a></li><li class="breadcrumb-item"><a href="../slides/workflow.html">Example workflow</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Example workflow</h1>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learning Goals
-</div>
-</div>
-<div class="callout-body-container callout-body">
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alec L. Robitaille, Isabella C. Richmond </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header><section id="why-workflows" class="level2"><h2 class="anchored" data-anchor-id="why-workflows">Why workflows?</h2>
 <ul>
-<li>Execute a workflow in {targets} that reads in data, performs a function, and saves an output.</li>
-<li>Recognize the value of workflows for reducing mental load and improving efficiency.</li>
-</ul>
-</div>
-</div>
-<p>Now that we have our <code>_targets.R</code> script setup with the previous exercises and we have added our first few targets to the pipeline, let’s take a look at using {targets}. It is a bit different than the <a href="https://books.ropensci.org/targets/#motivation">usual R approach</a> where we make edits, then rerun everything, wait for results, notice issues, rerun from scratch…</p>
-<p>The following functions allow us to interact with the pipeline’s definition, metadata and results. Because of this, we shouldn’t put them inside the <code>_targets.R</code> script or in our <code>R/</code> directory. Often a {targets} pipeline will result in a rendered document or manuscript, a number of saved plots or an output data file.</p>
-<p>In our case, let’s make a new script called <code>explore.R</code> in the root of the project’s directory. Then we can keep track of our commands like <code>tar_meta()</code>, <code>tar_visnetwork()</code> and <code>tar_read()</code>, and easily rerun them when we make changes to the pipeline.</p>
-<p>Instruction: make a empty script called <code>explore.R</code> in the root of the project’s directory. At the top, load the packages and/or the functions with <code>source()</code> or <code>tar_source()</code>.</p>
-<p><code>explore.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="tar_visnetwork" class="level2">
-<h2 class="anchored" data-anchor-id="tar_visnetwork">tar_visnetwork()</h2>
-<p>Before we run our pipeline, we can check that everything looks good in the dependency graph with <code>tar_visnetwork()</code>. By default, <code>tar_visnetwork()</code> shows objects, functions and targets. You can adjust this behaviour to only show the targets using the argument <code>targets_only</code> set to TRUE.</p>
-<p>Another argument that is especially useful when you have many targets: <code>name</code>. To show only selected targets, you can use {tidyselect} <a href="https://tidyselect.r-lib.org/reference/index.html#selecting-variables">helpers</a> like <code>starts_with()</code>. The <code>name</code> argument comes up in many other {targets} functions including <code>tar_meta()</code> and <code>tar_read()</code>.</p>
-<p>Related functions to <code>tar_visnetwork()</code> include:</p>
+<li>Reduced mental load
 <ul>
-<li><code>tar_glimpse()</code> is a faster version of <code>tar_visnetwork()</code> that doesn’t check the pipeline’s metadata to see if functions have been are outdated or not</li>
-<li><code>tar_mermaid()</code> returns a <a href="https://mermaid.js.org/">Mermaid.js</a> diagram representing the pipeline</li>
-<li><code>tar_network()</code> returns a network of edges and nodes representing the pipeline</li>
+<li>no need to keep track of what has been changed</li>
+<li>can easily branch off of earlier work</li>
 </ul>
-<section id="exercise-tar_visnetwork" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-tar_visnetwork">Exercise: tar_visnetwork()</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Visualize your {targets} workflow.</p>
-</div>
-</div>
-<p>Instruction: run <code>tar_visnetwork()</code> from your <code>explore.R</code> script to see the dependency graph defined in your <code>_targets.R</code> script. Try out the <code>targets_only</code> and <code>name</code> arguments too.</p>
-<details>
-<summary>
-Hint
-</summary>
-<p><code>explore.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>(<span class="at">targets_only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>(<span class="fu">ends_with</span>(<span class="st">'counts'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</section>
-</section>
-<section id="tar_make" class="level2">
-<h2 class="anchored" data-anchor-id="tar_make">tar_make()</h2>
-<p>Run the {targets} pipeline with <code>tar_make()</code>. The pipeline is run in a new external R process, which means that <code>tar_make()</code> doesn’t impact your current workspace and, more importantly, is not influenced by your current workspace. This totally isolated environment is how {targets} offers us a truly reproducible approach - only things defined in the <code>_targets.R</code> script (or sourced within it) are considered.</p>
-<section id="exercise-tar_make" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-tar_make">Exercise: tar_make()</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Run your {targets} workflow.</p>
-</div>
-</div>
-<p>Instruction: run <code>tar_make()</code> from your <code>explore.R</code> script.</p>
-<details>
-<summary>
-Hint
-</summary>
-<p><code>explore.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_make</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</section>
-</section>
-<section id="tar_read-tar_load" class="level2">
-<h2 class="anchored" data-anchor-id="tar_read-tar_load">tar_read(), tar_load()</h2>
-<p>To look at results from the {targets} pipeline, use <code>tar_read()</code> and <code>tar_load()</code>. <code>tar_read()</code> reads targets without saving them as an object in your environment and <code>tar_load()</code> loads the object directly to your environment using the name of the target as the object.</p>
-<section id="exercise-tar_read-tar_load" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-tar_read-tar_load">Exercise: tar_read(), tar_load()</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Load completed targets from your workflow.</p>
-</div>
-</div>
-<p>Instruction: run <code>tar_read()</code> and <code>tar_load()</code> from your <code>explore.R</code> script to read/load the targets defined in your {targets} pipeline.</p>
-<details>
-<summary>
-Hint
-</summary>
-<p><code>explore.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_read</span>(prep_counts)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(sums)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_read</span>(plotted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</section>
-</section>
-<section id="tar_meta" class="level2">
-<h2 class="anchored" data-anchor-id="tar_meta">tar_meta()</h2>
-<p>The metadata related to the {targets} pipeline is accessible using the function <code>tar_meta()</code>.</p>
-<section id="exercise-tar_meta" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-tar_meta">Exercise: tar_meta()</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Explore the metadata from your workflow.</p>
-</div>
-</div>
-<p>Instruction: run <code>tar_meta()</code> from your <code>explore.R</code> script to look at the metadata associated with your {targets} pipeline. Also try using the <code>names</code> argument to filter the metadata returned.</p>
-<p>Note: we sometimes find it helpful to use the <code>View()</code> function to open the metadata as a table in RStudio.</p>
-<details>
-<summary>
-Hint
-</summary>
-<p><code>explore.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_meta</span>()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_meta</span>(<span class="fu">ends_with</span>(<span class="st">'counts'</span>))</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(<span class="fu">tar_meta</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</section>
-</section>
-<section id="edits-rerun-edits" class="level2">
-<h2 class="anchored" data-anchor-id="edits-rerun-edits">Edits, rerun, edits, …</h2>
-<p>Now that we have a {targets} pipeline, the approach is a bit different than we might be used to using R interactively. With a {targets} pipeline, everything is defined in the pipeline so our process is now about making edits to our functions and our <code>_targets.R</code> pipeline, then rerunning <code>tar_make()</code>. {targets} tracks all functions and objects (and optionally can also track external files) and will only rerun downstream targets when required. This is the other main way that {targets} makes our lives easier. We no longer need to mentally keep track of versions of scripts, output files, figures, etc - just run <code>tar_make()</code> to run anything outdated (or check with <code>tar_visnetwork()</code>).</p>
-<section id="exercise-practice-the-targets-approach" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-practice-the-targets-approach">Exercise: practice the {targets} approach</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Update and rerun your {targets} workflow.</p>
-</div>
-</div>
-<p>Instruction: make sure your {targets} pipeline is up to date with <code>tar_visnetwork()</code>. Then, make an edit to the function <code>sum_counts()</code>. Rerun the {targets} pipeline. Next, make an edit to the function <code>filter_islands()</code>. Rerun with <code>tar_make()</code>. Lastly, make an edit to <code>prepare_csv()</code> and rerun. Note which targets were rerun with each change and discuss with your neighbours.</p>
-<p>Bonus:</p>
+</li>
+<li>Iterative</li>
+<li>Reliable</li>
+<li>Easy to share</li>
+</ul></section><section id="why-targets" class="level2"><h2 class="anchored" data-anchor-id="why-targets">Why {targets}?</h2>
 <ul>
-<li>make a change to <code>prepare_csv()</code> that doesn’t actually change the returned object (eg. by adding an irrelevant intermediate step). Does this force the {targets} pipeline to rerun?</li>
-</ul>
-</section>
-</section>
-<section id="forcing-reruns" class="level2">
-<h2 class="anchored" data-anchor-id="forcing-reruns">Forcing reruns</h2>
-<p>The following functions can be used to force {targets} to rerun targets.</p>
-<ul>
-<li><code>tar_invalidate()</code> deletes the metadata record associated with a target, meaning it will rerun regardless of whether it is out of date. However, the already-run file still exists (and can be found using <code>tar_path_target()</code>)</li>
-<li><code>tar_delete()</code> deletes individual target output values</li>
-<li><code>tar_destroy()</code> deletes the whole <code>_targets/</code> data store (<strong>caution</strong>)</li>
-</ul>
-</section>
-<section id="bonus" class="level2">
-<h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
-<p>Make more targets!</p>
-<ul>
-<li>use the <code>prepare_csv()</code> function with the weather timeseries</li>
-<li>make a target for something that isn’t one of our custom functions eg. <code>summary()</code>. ({targets} don’t need to be custom functions, any R command can be used)</li>
-<li>use <code>tar_invalidate()</code> to rerun a part of the example {targets} workflow</li>
-</ul>
+<li><p>Most relevant package for R users</p></li>
+<li><p>Extremely powerful, part of a universe (‘targetopia’)</p></li>
+<li><p>Well documented, actively developed</p></li>
+</ul></section><section id="what-does-it-look-like" class="level2"><h2 class="anchored" data-anchor-id="what-does-it-look-like">What does it look like?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="visNetwork html-widget html-fill-item" id="htmlwidget-c79a22b29d67e2e51456" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-c79a22b29d67e2e51456">{"x":{"nodes":{"name":["counts","counts_file","fig_counts","fig_penguins","group_counts","group_penguins","keys_counts","keys_penguins","mean_counts_weather","model_counts","model_penguins","model_tables","prepared_counts","prepared_penguins","render","save_fig_counts","weather","weather_file"],"type":["stem","stem","pattern","pattern","stem","stem","pattern","pattern","stem","pattern","pattern","stem","stem","stem","stem","pattern","stem","stem"],"description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"status":["outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated","outdated"],"seconds":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"bytes":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"branches":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"label":["counts","counts_file","fig_counts","fig_penguins","group_counts","group_penguins","keys_counts","keys_penguins","mean_counts_weather","model_counts","model_penguins","model_tables","prepared_counts","prepared_penguins","render","save_fig_counts","weather","weather_file"],"color":["#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5"],"id":["counts","counts_file","fig_counts","fig_penguins","group_counts","group_penguins","keys_counts","keys_penguins","mean_counts_weather","model_counts","model_penguins","model_tables","prepared_counts","prepared_penguins","render","save_fig_counts","weather","weather_file"],"level":[2,1,7,6,5,4,6,5,4,6,5,7,3,3,8,8,2,1],"shape":["dot","dot","square","square","dot","dot","square","square","dot","square","square","dot","dot","dot","dot","square","dot","dot"]},"edges":{"from":["counts_file","group_counts","keys_counts","group_penguins","keys_penguins","mean_counts_weather","prepared_penguins","group_counts","group_penguins","prepared_counts","group_counts","group_penguins","keys_counts","model_counts","counts","weather","weather","keys_penguins","fig_penguins","weather","fig_counts","model_tables","prepared_counts","model_penguins","prepared_penguins","keys_counts","fig_counts","weather_file"],"to":["counts","fig_counts","fig_counts","fig_penguins","fig_penguins","group_counts","group_penguins","keys_counts","keys_penguins","mean_counts_weather","model_counts","model_penguins","model_tables","model_tables","prepared_counts","prepared_counts","prepared_penguins","render","render","render","render","render","render","render","render","save_fig_counts","save_fig_counts","weather"],"color":["#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5","#78B7C5"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"levelSeparation":150,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Outdated","Regular\ntarget","Dynamic\nbranches"],"color":["#78B7C5","#899DA4","#899DA4"],"shape":["dot","dot","square"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1221,7 +973,6 @@ Hint
   });
   </script>
 </div> <!-- /content -->
-
 
 
 
