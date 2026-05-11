@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>targets-extensions – Reproducible workflows workshop</title>
+<title>demo-and-examples-targets – Reproducible workflows workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/03-targets-extensions.html">Targets extensions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/04-demo-and-examples-targets.html">Demo and examples of targets pipelines</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -392,14 +392,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/targets/02-targets-usage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application of targets</span></a>
+  <a href="../../exercises/targets/02-using-targets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using targets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/targets/03-targets-extensions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Targets extensions</span></a>
+  <a href="../../exercises/targets/03-extending-targets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extending targets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../exercises/targets/04-demo-and-examples-targets.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Demo and examples of targets pipelines</span></a>
   </div>
 </li>
       </ul>
@@ -555,43 +561,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#targets-extensions" id="toc-targets-extensions" class="nav-link active" data-scroll-target="#targets-extensions">Targets extensions</a>
+  <li><a href="#demo-and-examples-of-targets-pipelines" id="toc-demo-and-examples-of-targets-pipelines" class="nav-link active" data-scroll-target="#demo-and-examples-of-targets-pipelines">Demo and examples of targets pipelines</a>
   <ul>
   <li><a href="#demo" id="toc-demo" class="nav-link" data-scroll-target="#demo">Demo</a></li>
-  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">Details</a>
-  <ul class="collapse">
-  <li><a href="#iterating" id="toc-iterating" class="nav-link" data-scroll-target="#iterating">Iterating</a>
-  <ul class="collapse">
-  <li><a href="#iteration-list" id="toc-iteration-list" class="nav-link" data-scroll-target="#iteration-list"><code>iteration = 'list'</code></a></li>
-  </ul></li>
-  <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a></li>
-  </ul></li>
-  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a></li>
-  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a></li>
+  <li><a href="#examples-of-real-world-pipelines" id="toc-examples-of-real-world-pipelines" class="nav-link" data-scroll-target="#examples-of-real-world-pipelines">Examples of real-world pipelines</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/03-targets-extensions.html">Targets extensions</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/04-demo-and-examples-targets.html">Demo and examples of targets pipelines</a></li></ol></nav></header>
 
 
 
 
 
-<section id="targets-extensions" class="level1">
-<h1>Targets extensions</h1>
-<p>Let’s look at a {targets} pipeline that more closely resembles what a full project would be including figures, model, output, tables and a manuscript object. We’ll start with a demo, so we can show off some of the power and extended features of {targets}, then we can work through it piece by piece to explain the details.</p>
-<p>Later, check out some examples of full {targets} pipelines that we’ve developed to get a sense for the various applications and approaches that can be used.</p>
-<ul>
-<li>data cleaning and preparation pipeline: <a href="https://github.com/robitalec/prepare-locs/blob/main/_targets.R" class="uri">https://github.com/robitalec/prepare-locs/blob/main/_targets.R</a></li>
-<li>movement ecology method: <a href="https://github.com/robitalec/targets-issa/blob/main/_targets.R" class="uri">https://github.com/robitalec/targets-issa/blob/main/_targets.R</a></li>
-<li>remote sensing / spatial application: <a href="https://github.com/robitalec/targets-rgee-extract/blob/main/_targets.R" class="uri">https://github.com/robitalec/targets-rgee-extract/blob/main/_targets.R</a></li>
-<li>Bayesian models with {brms} - <a href="https://github.com/robitalec/statistical-rethinking-colearning-2023/blob/main/_targets.R" class="uri">https://github.com/robitalec/statistical-rethinking-colearning-2023/blob/main/_targets.R</a></li>
-</ul>
+<section id="demo-and-examples-of-targets-pipelines" class="level1">
+<h1>Demo and examples of targets pipelines</h1>
+<p>Let’s look at our demo {targets} pipeline and, afterwards, some examples to see what a <em>real-world</em> pipeline looks like including figures, model, output, tables and a manuscript object.</p>
 <section id="demo" class="level2">
 <h2 class="anchored" data-anchor-id="demo">Demo</h2>
-<p>With our example {targets} pipeline, we’ll go through the following steps:</p>
+<p>With our example {targets} pipeline (open <code>/projects/example-targets-workflow/example-targets-workflow.Rproj</code>), and go through the following steps:</p>
 <ol type="1">
 <li>Visualize the pipeline’s steps and interdependencies.</li>
 </ol>
@@ -601,21 +591,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_make</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
-<li>Explore the results</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">'figures'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>figures</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>├── CHR.png</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>├── COR.png</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>├── HUM.png</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>├── LIT.png</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>└── TOR.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">'output'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>output</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>├── sums.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>Look at the rendered manuscript document</li>
+<li><p>Explore the results</p></li>
+<li><p>Look at the rendered manuscript document</p></li>
 </ol>
 <p>Open the rendered document in the <code>paper/</code> directory.</p>
 <ol start="6" type="1">
@@ -627,152 +604,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol></li>
 </ol>
 </section>
-<section id="details" class="level2">
-<h2 class="anchored" data-anchor-id="details">Details</h2>
-<p>Obviously, this is an overwhelming amount of new {targets} functions and extensions combined with other packages and Quarto to render an example manuscript and output figures and tables. We’ll walk through each of the pieces and how they relate to each other, and we hope this is a useful resource for when you bring {targets} to your next project.</p>
-<section id="iterating" class="level3">
-<h3 class="anchored" data-anchor-id="iterating">Iterating</h3>
-<p>Like we mentioned in the functions resources, there are plenty of options in R for iterating including:</p>
+<section id="examples-of-real-world-pipelines" class="level2">
+<h2 class="anchored" data-anchor-id="examples-of-real-world-pipelines">Examples of real-world pipelines</h2>
+<p>Check out some examples of full {targets} pipelines that we’ve developed to get a sense for the various applications and approaches that can be used.</p>
 <ul>
-<li>the <code>apply</code> family</li>
-<li>{purrr}</li>
-<li>{dplyr} with <code>group_by</code> and <code>mutate</code></li>
-<li>{data.table}’s by</li>
-</ul>
-<p>{targets} offers a new approach that integrates into our pipeline seamlessly and extends our functions to run over groups of rows in a data.frame. There are two steps:</p>
-<ol type="1">
-<li>Use the {tarchetypes} function <code>tar_group_by()</code> to define the variables to group the data.frame on.</li>
-<li>Use “dynamic branching” with the <code>tar_target()</code> argument <code>pattern</code>.</li>
-</ol>
-<p>For example:</p>
-<p><code>_targets.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#...</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Group the mtcars data.frame by the values in the column "cyl"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_group_by</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        group_counts,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        mtcars,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        cyl</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Averages by group</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        mean_mpg,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg),</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">pattern =</span> <span class="fu">map</span>(mtcars)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Summarize all the cars</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        summarize_cars,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">summarize</span>(group_counts)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>We pass the data.frame to the <code>command</code> argument, and the following arguments are the column names to group on (in this case <code>cyl</code>). Then downstream targets that want to iterate over the groups of rows use the argument <code>pattern</code> with the function <code>map()</code>. The target corresponding to the grouped data.frame is passed to <code>map()</code>.</p>
-<p>If you want to use the full dataset, ungrouped, again downstream simply refer to the target without the <code>pattern</code> argument and {targets} will automatically combine the data.frame again.</p>
-<p>Another approach that Alec likes to use with {data.table} is:</p>
-<p><code>_targets.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Split by: within which column or set of columns (eg. c(id, yr))</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  do we want to split our analysis?</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>split_by <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'id'</span>, <span class="st">'species'</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Targets</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        split_data,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        data[, <span class="at">tar_group :=</span> .GRP, <span class="at">by =</span> split_by],</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">iteration =</span> <span class="st">'group'</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        split_key,</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">unique</span>(locs_prep[, .SD, <span class="at">.SDcols =</span> <span class="fu">c</span>(split_by, <span class="st">'tar_group'</span>)])</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Read more:</p>
-<ul>
-<li><code>tar_group_by()</code>: <a href="https://docs.ropensci.org/tarchetypes/reference/tar_group_by.html" class="uri">https://docs.ropensci.org/tarchetypes/reference/tar_group_by.html</a></li>
-<li><code>tar_group_count()</code>: <a href="https://docs.ropensci.org/tarchetypes/reference/tar_group_count.html" class="uri">https://docs.ropensci.org/tarchetypes/reference/tar_group_count.html</a></li>
-<li><code>tar_group()</code>: <a href="https://docs.ropensci.org/targets/reference/tar_group.html" class="uri">https://docs.ropensci.org/targets/reference/tar_group.html</a></li>
-</ul>
-<p>These are example of “dynamic branching”, but also see “static branching” functions:</p>
-<ul>
-<li><code>tar_map</code>: <a href="https://docs.ropensci.org/tarchetypes/reference/tar_map.html" class="uri">https://docs.ropensci.org/tarchetypes/reference/tar_map.html</a></li>
-<li><code>tar_rep</code>: <a href="https://docs.ropensci.org/tarchetypes/reference/tar_rep.html" class="uri">https://docs.ropensci.org/tarchetypes/reference/tar_rep.html</a></li>
-</ul>
-<section id="iteration-list" class="level4">
-<h4 class="anchored" data-anchor-id="iteration-list"><code>iteration = 'list'</code></h4>
-<p>The <code>iteration</code> argument for <code>tar_target()</code> is used to change how {targets} splits and combines branches. This is is required when you want to return objects like plots, models or matrices that aren’t obviously combined.</p>
-<p>For example:</p>
-<p><code>_targets.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#...</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Group the mtcars data.frame by the values in the column "cyl"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_group_by</span>(</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        group_counts,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        mtcars,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        cyl</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Averages by group</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        plot_cars,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_histogram</span>(mpg),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">pattern =</span> <span class="fu">map</span>(mtcars),</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">iteration =</span> <span class="st">'list'</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Matrix of correlations between vars</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        correlation_metrics,</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cor</span>(mtcars),</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">pattern =</span> <span class="fu">map</span>(mtcars),</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">iteration =</span> <span class="st">'list'</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>See more details for argument <code>iteration</code> in <code>?tar_target</code>: <a href="https://docs.ropensci.org/targets/reference/tar_target.html" class="uri">https://docs.ropensci.org/targets/reference/tar_target.html</a></p>
-</section>
-</section>
-<section id="files" class="level3">
-<h3 class="anchored" data-anchor-id="files">Files</h3>
-<p>{targets} can be used to track external files for changes. This includes input data files but also outputs like saved plots or tables. To signal to {targets} that these target represents an external file to track, use the argument ‘format’ set to ‘file’.</p>
-<p><code>_targets.R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        file_counts,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        path_counts,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">format =</span> <span class="st">'file'</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="recommendations" class="level2">
-<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
-<p>Start your <strong>next</strong> project with {targets} because it is easier to start from a simple project then to try and restructure an old, large project.</p>
-<p>If you use Git, you will likely want to ignore the <code>_targets/</code> directory.</p>
-</section>
-<section id="bonus" class="level2">
-<h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
-<p>Look into the arguments provided by <code>tar_option_set()</code>. This is link to the full reference page: <a href="https://docs.ropensci.org/targets/reference/tar_option_set.html" class="uri">https://docs.ropensci.org/targets/reference/tar_option_set.html</a></p>
-<ul>
-<li><code>format</code> argument
-<ul>
-<li>for <code>data.table</code> objects you can use {qs} and format qs to retain data.table clas</li>
-</ul></li>
-<li><code>error</code> argument to define what {targets} should do when it hits an error</li>
-<li><code>workspace_on_error</code> argument to optionally save a workspace file for each target that throws an error</li>
-<li><code>cue</code> argument</li>
-</ul>
-<p>If you are already done all the previous exercises and have extra time, or on your own after the workshop, try this bonus exercise:</p>
-<ul>
-<li>write a function that processes the ice data</li>
-<li>look at the relationship between adult and chick counts, and the ice data and weather data. How might these two be influencing adult and chick counts?</li>
+<li><a href="https://github.com/robitalec/prepare-locs/blob/main/_targets.R">data cleaning and preparation pipeline</a></li>
+<li>In this pipeline, we use the targets function <a href="https://github.com/robitalec/prepare-locs/blob/main/_targets.R#L31-L35"><code>tar_cue</code></a> to define how often the target should become stale and re-run, and <a href="https://github.com/robitalec/prepare-locs/blob/main/R/check_meta.R#L15"><code>file.exists</code></a> to check which of a large list of input files exist on the users computer for processing</li>
+<li><a href="https://github.com/robitalec/targets-issa/blob/main/_targets.R">movement ecology method (iSSA)</a></li>
+<li>We use <a href="https://github.com/robitalec/targets-issa/blob/main/_targets.R#L103"><code>iteration = 'group'</code></a> with a column named “tar_group” to run the analysis by defined chunks in the data e.g.&nbsp;individuals and years</li>
+<li><a href="https://github.com/robitalec/statistical-rethinking-colearning-2024">Bayesian models with {brms}</a></li>
+<li>We use a <a href="https://github.com/robitalec/statistical-rethinking-colearning-2024/blob/main/_targets.R#L67-L76">custom target factory</a> to prepare the pieces (e.g.&nbsp;priors, summaries, model fitting, model checks) that make up a complete Bayesian modeling approach</li>
+<li><a href="https://github.com/robitalec/targets-rgee-extract/blob/main/_targets.R">Remote sensing and spatial application with {rgee}</a></li>
+<li>We use a <a href="https://github.com/robitalec/targets-rgee-extract/blob/main/_targets.R#L134-L139">multiline statement</a> to filter images before sampling</li>
 </ul>
 
 

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.37">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>functions-introduction – Reproducible workflows workshop</title>
+
+
+<title>using-targets – Reproducible workflows workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -77,7 +81,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-1c5d05e776d8cc6ed79b334dc06cf84a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -104,7 +109,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -270,20 +278,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/01-functions-introduction.html">Functions</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/01-functions-introduction.html">Introduction to functions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/02-using-targets.html">Using targets</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Reproducible workflows workshop</a> 
         <div class="sidebar-tools-main">
@@ -299,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
@@ -313,8 +327,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
@@ -322,16 +336,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Functions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/functions/01-functions-introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../exercises/functions/01-functions-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to functions</span></a>
   </div>
 </li>
@@ -360,17 +374,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">targets</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/targets/01-targets-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting up targets</span></a>
@@ -378,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/targets/02-using-targets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../exercises/targets/02-using-targets.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Using targets</span></a>
   </div>
 </li>
@@ -395,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/renv.html" class="sidebar-item-text sidebar-link">
@@ -409,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -418,8 +432,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../resources/01-projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
@@ -450,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -459,8 +473,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../slides/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Setup &amp; Management</span></a>
@@ -479,7 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -488,8 +502,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item sidebar-item-section">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">README</span></a>
@@ -497,8 +511,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../_templates/README/dataset-template.md" class="sidebar-item-text sidebar-link">
  <span class="menu-text">dataset-template.md</span></a>
@@ -517,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
@@ -526,52 +540,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../_templates/test_function.R" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test_function.R</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li>
-<a href="#introduction-to-functions" id="toc-introduction-to-functions" class="nav-link active" data-scroll-target="#introduction-to-functions">Introduction to functions</a>
+  <li><a href="#using-targets" id="toc-using-targets" class="nav-link active" data-scroll-target="#using-targets">Using targets</a>
   <ul>
-<li>
-<a href="#function-structure" id="toc-function-structure" class="nav-link" data-scroll-target="#function-structure">Function Structure</a>
+  <li><a href="#tar_visnetwork" id="toc-tar_visnetwork" class="nav-link" data-scroll-target="#tar_visnetwork">tar_visnetwork()</a>
   <ul class="collapse">
-<li><a href="#exercise-function-structure" id="toc-exercise-function-structure" class="nav-link" data-scroll-target="#exercise-function-structure">Exercise: function structure</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#thinking-in-functions" id="toc-thinking-in-functions" class="nav-link" data-scroll-target="#thinking-in-functions">Thinking in Functions</a>
+  <li><a href="#exercise-tar_visnetwork" id="toc-exercise-tar_visnetwork" class="nav-link" data-scroll-target="#exercise-tar_visnetwork">Exercise: tar_visnetwork()</a></li>
+  </ul></li>
+  <li><a href="#tar_make" id="toc-tar_make" class="nav-link" data-scroll-target="#tar_make">tar_make()</a>
   <ul class="collapse">
-<li><a href="#exercise-thinking-in-functions" id="toc-exercise-thinking-in-functions" class="nav-link" data-scroll-target="#exercise-thinking-in-functions">Exercise: thinking in functions</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#reading-functions" id="toc-reading-functions" class="nav-link" data-scroll-target="#reading-functions">Reading Functions</a>
+  <li><a href="#exercise-tar_make" id="toc-exercise-tar_make" class="nav-link" data-scroll-target="#exercise-tar_make">Exercise: tar_make()</a></li>
+  </ul></li>
+  <li><a href="#tar_read-tar_load" id="toc-tar_read-tar_load" class="nav-link" data-scroll-target="#tar_read-tar_load">tar_read(), tar_load()</a>
   <ul class="collapse">
-<li><a href="#exercise-reading-functions" id="toc-exercise-reading-functions" class="nav-link" data-scroll-target="#exercise-reading-functions">Exercise: reading functions</a></li>
+  <li><a href="#exercise-tar_read-tar_load" id="toc-exercise-tar_read-tar_load" class="nav-link" data-scroll-target="#exercise-tar_read-tar_load">Exercise: tar_read(), tar_load()</a></li>
+  </ul></li>
+  <li><a href="#tar_meta" id="toc-tar_meta" class="nav-link" data-scroll-target="#tar_meta">tar_meta()</a>
+  <ul class="collapse">
+  <li><a href="#exercise-tar_meta" id="toc-exercise-tar_meta" class="nav-link" data-scroll-target="#exercise-tar_meta">Exercise: tar_meta()</a></li>
+  </ul></li>
+  <li><a href="#edits-rerun-edits" id="toc-edits-rerun-edits" class="nav-link" data-scroll-target="#edits-rerun-edits">Edits, rerun, edits, …</a>
+  <ul class="collapse">
+  <li><a href="#exercise-practice-the-targets-approach" id="toc-exercise-practice-the-targets-approach" class="nav-link" data-scroll-target="#exercise-practice-the-targets-approach">Exercise: practice the {targets} approach</a></li>
+  </ul></li>
+  <li><a href="#forcing-reruns" id="toc-forcing-reruns" class="nav-link" data-scroll-target="#forcing-reruns">Forcing reruns</a></li>
+  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul>
-</li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/01-functions-introduction.html">Functions</a></li><li class="breadcrumb-item"><a href="../../exercises/functions/01-functions-introduction.html">Introduction to functions</a></li></ol></nav></header><section id="introduction-to-functions" class="level1"><h1>Introduction to functions</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercises/projects.html">Exercises</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/01-targets-setup.html">targets</a></li><li class="breadcrumb-item"><a href="../../exercises/targets/02-using-targets.html">Using targets</a></li></ol></nav></header>
+
+
+
+
+
+<section id="using-targets" class="level1">
+<h1>Using targets</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -582,11 +608,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read and understand structure of functions in R in terms of inputs, arguments, return objects, and naming.</p>
+<ul>
+<li>Execute a workflow in {targets} that reads in data, performs a function, and saves an output.</li>
+<li>Recognize the value of workflows for reducing mental load and improving efficiency.</li>
+</ul>
 </div>
 </div>
-<section id="function-structure" class="level2"><h2 class="anchored" data-anchor-id="function-structure">Function Structure</h2>
-<section id="exercise-function-structure" class="level3"><h3 class="anchored" data-anchor-id="exercise-function-structure">Exercise: function structure</h3>
+<p>Now that we have our <code>_targets.R</code> script setup with the previous exercises and we have added our first few targets to the pipeline, let’s take a look at using {targets}. It is a bit different than the <a href="https://books.ropensci.org/targets/#motivation">usual R approach</a> where we make edits, then rerun everything, wait for results, notice issues, rerun from scratch…</p>
+<p>The following functions allow us to interact with the pipeline’s definition, metadata and results. Because of this, we shouldn’t put them inside the <code>_targets.R</code> script or in our <code>R/</code> directory. Often a {targets} pipeline will result in a rendered document or manuscript, a number of saved plots or an output data file.</p>
+<p>In our case, let’s make a new script called <code>explore.R</code> in the root of the project’s directory. Then we can keep track of our commands like <code>tar_meta()</code>, <code>tar_visnetwork()</code> and <code>tar_read()</code>, and easily rerun them when we make changes to the pipeline.</p>
+<p>Instruction: make a empty script called <code>explore.R</code> in the root of the project’s directory. At the top, load the packages and/or the functions with <code>source()</code> or <code>tar_source()</code>.</p>
+<p><code>explore.R</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tar_visnetwork" class="level2">
+<h2 class="anchored" data-anchor-id="tar_visnetwork">tar_visnetwork()</h2>
+<p>Before we run our pipeline, we can check that everything looks good in the dependency graph with <code>tar_visnetwork()</code>. By default, <code>tar_visnetwork()</code> shows objects, functions and targets. You can adjust this behaviour to only show the targets using the argument <code>targets_only</code> set to TRUE.</p>
+<p>Another argument that is especially useful when you have many targets: <code>name</code>. To show only selected targets, you can use {tidyselect} <a href="https://tidyselect.r-lib.org/reference/index.html#selecting-variables">helpers</a> like <code>starts_with()</code>. The <code>name</code> argument comes up in many other {targets} functions including <code>tar_meta()</code> and <code>tar_read()</code>.</p>
+<p>Related functions to <code>tar_visnetwork()</code> include:</p>
+<ul>
+<li><code>tar_glimpse()</code> is a faster version of <code>tar_visnetwork()</code> that doesn’t check the pipeline’s metadata to see if functions have been are outdated or not</li>
+<li><code>tar_mermaid()</code> returns a <a href="https://mermaid.js.org/">Mermaid.js</a> diagram representing the pipeline</li>
+<li><code>tar_network()</code> returns a network of edges and nodes representing the pipeline</li>
+</ul>
+<section id="exercise-tar_visnetwork" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-tar_visnetwork">Exercise: tar_visnetwork()</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -597,119 +643,177 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note the structure of three functions that you are familiar with.</p>
+<p>Visualize your {targets} workflow.</p>
 </div>
 </div>
-<p>Pick three functions of your choice and note their characteristics. (pairs)</p>
-<p>For example:</p>
-<ul>
-<li>name</li>
-<li>arguments (inputs, options)</li>
-<li>return object (outputs)</li>
-</ul>
-<p>Feel free to look up documentation online, in the R help manual on your computer through RStudio or using the <code>?</code> and <code>??</code> commands.</p>
-<p>We encourage you to find your own functions, maybe a function you use or have wanted to learn about. If you can’t think of any right now, see for example <code><a href="https://rdrr.io/r/stats/lm.html">stats::lm()</a></code>, <code><a href="https://rdrr.io/r/stats/Uniform.html">stats::runif()</a></code>, or (trickier) <code><a href="https://rdrr.io/r/base/do.call.html">base::do.call()</a></code>.</p>
-</section></section><section id="thinking-in-functions" class="level2"><h2 class="anchored" data-anchor-id="thinking-in-functions">Thinking in Functions</h2>
-<section id="exercise-thinking-in-functions" class="level3"><h3 class="anchored" data-anchor-id="exercise-thinking-in-functions">Exercise: thinking in functions</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Think through the structure of a function.</p>
-</div>
-</div>
-<p>Instruction: For the following tasks, write a function’s name, arguments and return object. Do this on paper, or in a blank text document - we are not writing code yet.</p>
-<p>First round (solo)</p>
-<ul>
-<li>Count the number of values greater than 0 in one column of a data.frame</li>
-<li>Filter rows in one column of a data.frame that match a string</li>
-<li>Plot a histogram for each vector of numbers in a list</li>
-</ul>
-<p>Learning goal: Reframe how we might think of code for an analysis as a series of steps instead as inputs, outputs, and arguments of functions.</p>
-<p>Second round (together)</p>
-<ul>
-<li>Aggregate columns of a data.frame by a grouping column, calculate a metric, and make two summary plots</li>
-<li>Print summary statistics, make a diagnostic plot, filter based on an input argument, and write out a spreadsheet</li>
-</ul>
-<p>Learning goal: identify when a function’s goal is too complex and could be split into subfunctions that are easier to develop and test.</p>
-</section></section><section id="reading-functions" class="level2"><h2 class="anchored" data-anchor-id="reading-functions">Reading Functions</h2>
-<section id="exercise-reading-functions" class="level3"><h3 class="anchored" data-anchor-id="exercise-reading-functions">Exercise: reading functions</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Test your understanding of functions.</p>
-</div>
-</div>
-<p>Instruction: Read the following functions and note what you expect they will output. We have purposely used vague function names in this case - not our typical recommendation! When you are ready, click “Show output”.</p>
-<p>Function 1</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">apple</span> <span class="op">&lt;-</span> <span class="st">'green'</span></span>
-<span></span>
-<span><span class="va">f</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="fu">f</span><span class="op">(</span><span class="va">apple</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<details><summary>
-Show output
-</summary><div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-</details><p>Function 2</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">apple</span> <span class="op">&lt;-</span> <span class="st">'gala'</span></span>
-<span></span>
-<span><span class="va">f</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">times</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">x</span>, times <span class="op">=</span> <span class="va">times</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="fu">f</span><span class="op">(</span><span class="va">apple</span>, <span class="fl">10</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<details><summary>
-Show output
-</summary><div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "gala" "gala" "gala" "gala" "gala" "gala" "gala" "gala" "gala" "gala"</code></pre>
-</div>
-</div>
-</details><p>Function 3</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">apple</span> <span class="op">&lt;-</span> <span class="st">'mcintosh'</span></span>
-<span><span class="va">potato</span> <span class="op">&lt;-</span> <span class="st">'russet'</span></span>
-<span></span>
-<span><span class="va">f</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">apple</span>, <span class="va">potato</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>apples <span class="op">=</span> <span class="va">apple</span>, potatoes <span class="op">=</span> <span class="va">potato</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="fu">f</span><span class="op">(</span>potato <span class="op">=</span> <span class="va">potato</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<details><summary>
-Show output
-</summary><div class="cell">
-<div class="cell-output cell-output-error">
-<pre><code>Error in `f()`:
-! argument "apple" is missing, with no default</code></pre>
-</div>
-</div>
+<p>Instruction: run <code>tar_visnetwork()</code> from your <code>explore.R</code> script to see the dependency graph defined in your <code>_targets.R</code> script. Try out the <code>targets_only</code> and <code>name</code> arguments too.</p>
+<details>
+<summary>
+Hint
+</summary>
+<p><code>explore.R</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>(<span class="at">targets_only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>(<span class="fu">ends_with</span>(<span class="st">'counts'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+</section>
+</section>
+<section id="tar_make" class="level2">
+<h2 class="anchored" data-anchor-id="tar_make">tar_make()</h2>
+<p>Run the {targets} pipeline with <code>tar_make()</code>. The pipeline is run in a new external R process, which means that <code>tar_make()</code> doesn’t impact your current workspace and, more importantly, is not influenced by your current workspace. This totally isolated environment is how {targets} offers us a truly reproducible approach - only things defined in the <code>_targets.R</code> script (or sourced within it) are considered.</p>
+<section id="exercise-tar_make" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-tar_make">Exercise: tar_make()</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Run your {targets} workflow.</p>
+</div>
+</div>
+<p>Instruction: run <code>tar_make()</code> from your <code>explore.R</code> script.</p>
+<details>
+<summary>
+Hint
+</summary>
+<p><code>explore.R</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_make</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</section>
+</section>
+<section id="tar_read-tar_load" class="level2">
+<h2 class="anchored" data-anchor-id="tar_read-tar_load">tar_read(), tar_load()</h2>
+<p>To look at results from the {targets} pipeline, use <code>tar_read()</code> and <code>tar_load()</code>. <code>tar_read()</code> reads targets without saving them as an object in your environment and <code>tar_load()</code> loads the object directly to your environment using the name of the target as the object.</p>
+<section id="exercise-tar_read-tar_load" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-tar_read-tar_load">Exercise: tar_read(), tar_load()</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Load completed targets from your workflow.</p>
+</div>
+</div>
+<p>Instruction: run <code>tar_read()</code> and <code>tar_load()</code> from your <code>explore.R</code> script to read/load the targets defined in your {targets} pipeline.</p>
+<details>
+<summary>
+Hint
+</summary>
+<p><code>explore.R</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_read</span>(prep_counts)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(sums)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_read</span>(plotted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</section>
+</section>
+<section id="tar_meta" class="level2">
+<h2 class="anchored" data-anchor-id="tar_meta">tar_meta()</h2>
+<p>The metadata related to the {targets} pipeline is accessible using the function <code>tar_meta()</code>.</p>
+<section id="exercise-tar_meta" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-tar_meta">Exercise: tar_meta()</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explore the metadata from your workflow.</p>
+</div>
+</div>
+<p>Instruction: run <code>tar_meta()</code> from your <code>explore.R</code> script to look at the metadata associated with your {targets} pipeline. Also try using the <code>names</code> argument to filter the metadata returned.</p>
+<p>Note: we sometimes find it helpful to use the <code>View()</code> function to open the metadata as a table in RStudio.</p>
+<details>
+<summary>
+Hint
+</summary>
+<p><code>explore.R</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_source</span>(<span class="st">'R'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_meta</span>()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_meta</span>(<span class="fu">ends_with</span>(<span class="st">'counts'</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(<span class="fu">tar_meta</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</section>
+</section>
+<section id="edits-rerun-edits" class="level2">
+<h2 class="anchored" data-anchor-id="edits-rerun-edits">Edits, rerun, edits, …</h2>
+<p>Now that we have a {targets} pipeline, the approach is a bit different than we might be used to using R interactively. With a {targets} pipeline, everything is defined in the pipeline so our process is now about making edits to our functions and our <code>_targets.R</code> pipeline, then rerunning <code>tar_make()</code>. {targets} tracks all functions and objects (and optionally can also track external files) and will only rerun downstream targets when required. This is the other main way that {targets} makes our lives easier. We no longer need to mentally keep track of versions of scripts, output files, figures, etc - just run <code>tar_make()</code> to run anything outdated (or check with <code>tar_visnetwork()</code>).</p>
+<section id="exercise-practice-the-targets-approach" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-practice-the-targets-approach">Exercise: practice the {targets} approach</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Update and rerun your {targets} workflow.</p>
+</div>
+</div>
+<p>Instruction: make sure your {targets} pipeline is up to date with <code>tar_visnetwork()</code>. Then, make an edit to the function <code>sum_counts()</code>. Rerun the {targets} pipeline. Next, make an edit to the function <code>filter_islands()</code>. Rerun with <code>tar_make()</code>. Lastly, make an edit to <code>prepare_csv()</code> and rerun. Note which targets were rerun with each change and discuss with your neighbours.</p>
+<p>Bonus:</p>
+<ul>
+<li>make a change to <code>prepare_csv()</code> that doesn’t actually change the returned object (eg. by adding an irrelevant intermediate step). Does this force the {targets} pipeline to rerun?</li>
+</ul>
+</section>
+</section>
+<section id="forcing-reruns" class="level2">
+<h2 class="anchored" data-anchor-id="forcing-reruns">Forcing reruns</h2>
+<p>The following functions can be used to force {targets} to rerun targets.</p>
+<ul>
+<li><code>tar_invalidate()</code> deletes the metadata record associated with a target, meaning it will rerun regardless of whether it is out of date. However, the already-run file still exists (and can be found using <code>tar_path_target()</code>)</li>
+<li><code>tar_delete()</code> deletes individual target output values</li>
+<li><code>tar_destroy()</code> deletes the whole <code>_targets/</code> data store (<strong>caution</strong>)</li>
+</ul>
+</section>
+<section id="bonus" class="level2">
+<h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
+<p>Make more targets!</p>
+<ul>
+<li>use the <code>prepare_csv()</code> function with the weather timeseries</li>
+<li>make a target for something that isn’t one of our custom functions eg. <code>summary()</code>. ({targets} don’t need to be custom functions, any R command can be used)</li>
+<li>use <code>tar_invalidate()</code> to rerun a part of the example {targets} workflow</li>
+</ul>
 
-</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1123,6 +1227,7 @@ Show output
   });
   </script>
 </div> <!-- /content -->
+
 
 
 
